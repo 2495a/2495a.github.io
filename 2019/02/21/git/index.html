@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>git | Hu Junming</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="本篇文章根据自己本身实际对git的操作以及经验做出简单的归纳总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git">
+<meta property="og:url" content="http://yoursite.com/2019/02/21/git/index.html">
+<meta property="og:site_name" content="Hu Junming">
+<meta property="og:description" content="本篇文章根据自己本身实际对git的操作以及经验做出简单的归纳总结">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://www.edunvpei.com/tu/0.jpg">
+<meta property="og:updated_time" content="2019-02-21T11:54:04.785Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git">
+<meta name="twitter:description" content="本篇文章根据自己本身实际对git的操作以及经验做出简单的归纳总结">
+<meta name="twitter:image" content="https://www.edunvpei.com/tu/0.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hu Junming" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/Cloud_Snow_Moon_128px_1179853_easyicon.net.ico">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+</head>
+</html>
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title>首页</a>
+      
+        <a class="nav-item" href="/archives" title>归档</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-git" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      git
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/02/21/git/" class="article-date">
+  <time datetime="2019-02-21T03:06:13.000Z" itemprop="datePublished">2019-02-21</time>
+</a>
+    
+    
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-doorframe" itemprop="articleBody">
+      
+        <p>本篇文章根据自己本身实际对git的操作以及经验做出简单的归纳总结</p>
+<a id="more"></a>
+<h2 id="简述git流程及操作"><a href="#简述git流程及操作" class="headerlink" title="简述git流程及操作"></a>简述git流程及操作</h2><h3 id="1-创建本地仓库"><a href="#1-创建本地仓库" class="headerlink" title="1. 创建本地仓库"></a>1. 创建本地仓库</h3><h4 id="1-创建Warehouse文件夹-cd进文件夹输入-git-init-初始化仓库"><a href="#1-创建Warehouse文件夹-cd进文件夹输入-git-init-初始化仓库" class="headerlink" title="(1) 创建Warehouse文件夹,cd进文件夹输入   git init  初始化仓库"></a>(1) 创建Warehouse文件夹,cd进文件夹输入   git init  初始化仓库</h4><h4 id="2-在Warehouse文件夹中创建a-txt并且写入内容"><a href="#2-在Warehouse文件夹中创建a-txt并且写入内容" class="headerlink" title="(2) 在Warehouse文件夹中创建a.txt并且写入内容"></a>(2) 在Warehouse文件夹中创建a.txt并且写入内容</h4><h4 id="3-终端输入git-add-a-txt-命令将工作区中修改的内容提交到暂存区"><a href="#3-终端输入git-add-a-txt-命令将工作区中修改的内容提交到暂存区" class="headerlink" title="(3) 终端输入git add a.txt 命令将工作区中修改的内容提交到暂存区"></a>(3) 终端输入git add a.txt 命令将工作区中修改的内容提交到暂存区</h4><h4 id="4-继上一步后输入git-commit-m-“附加说明”-命令将暂存区中所有内容提交到仓库-当前分支"><a href="#4-继上一步后输入git-commit-m-“附加说明”-命令将暂存区中所有内容提交到仓库-当前分支" class="headerlink" title="(4) 继上一步后输入git commit -m “附加说明” 命令将暂存区中所有内容提交到仓库(当前分支)"></a>(4) 继上一步后输入git commit -m “附加说明” 命令将暂存区中所有内容提交到仓库(当前分支)</h4><h4 id="5-我们可以在所有阶段使用git-status查看仓库当前状态"><a href="#5-我们可以在所有阶段使用git-status查看仓库当前状态" class="headerlink" title="(5) 我们可以在所有阶段使用git status查看仓库当前状态"></a>(5) 我们可以在所有阶段使用git status查看仓库当前状态</h4><h4 id="6-当我们修改过a-txt却忘了修改的什么内容-可以用git-diff命令查看"><a href="#6-当我们修改过a-txt却忘了修改的什么内容-可以用git-diff命令查看" class="headerlink" title="(6) 当我们修改过a.txt却忘了修改的什么内容  可以用git diff命令查看"></a>(6) 当我们修改过a.txt却忘了修改的什么内容  可以用git diff命令查看</h4><h4 id="7-提交过很多次内容后可以使用-git-log命令看到我们的提交日志"><a href="#7-提交过很多次内容后可以使用-git-log命令看到我们的提交日志" class="headerlink" title="(7) 提交过很多次内容后可以使用 git log命令看到我们的提交日志"></a>(7) 提交过很多次内容后可以使用 git log命令看到我们的提交日志</h4><h4 id="8-当我们想回到上一个版本-git-reset-–hard-head-head-回退两个版本-head-100-回退指定版本"><a href="#8-当我们想回到上一个版本-git-reset-–hard-head-head-回退两个版本-head-100-回退指定版本" class="headerlink" title="(8) 当我们想回到上一个版本 git reset –hard head^  head^^(回退两个版本)  head~100(回退指定版本)"></a>(8) 当我们想回到上一个版本 git reset –hard head^  head^^(回退两个版本)  head~100(回退指定版本)</h4><h4 id="10-使用git-checkout-–-a-txt-可以撤回在工作区的最后一次操作"><a href="#10-使用git-checkout-–-a-txt-可以撤回在工作区的最后一次操作" class="headerlink" title="(10) 使用git checkout – a.txt 可以撤回在工作区的最后一次操作"></a>(10) 使用git checkout – a.txt 可以撤回在工作区的最后一次操作</h4><h4 id="11-如果我们想要删掉某个文件可以使用-git-rm-–a-txt"><a href="#11-如果我们想要删掉某个文件可以使用-git-rm-–a-txt" class="headerlink" title="(11) 如果我们想要删掉某个文件可以使用 git rm –a.txt"></a>(11) 如果我们想要删掉某个文件可以使用 git rm –a.txt</h4><h4 id="12-如果错删了或者改错了只要版本库中还存在就可以用-git-checkout-–-a-txt一键还原"><a href="#12-如果错删了或者改错了只要版本库中还存在就可以用-git-checkout-–-a-txt一键还原" class="headerlink" title="(12) 如果错删了或者改错了只要版本库中还存在就可以用 git checkout – a.txt一键还原"></a>(12) 如果错删了或者改错了只要版本库中还存在就可以用 git checkout – a.txt一键还原</h4><h4 id="以下是在廖雪峰老师网站看到的一张图-简单易懂"><a href="#以下是在廖雪峰老师网站看到的一张图-简单易懂" class="headerlink" title="以下是在廖雪峰老师网站看到的一张图 简单易懂"></a>以下是在廖雪峰老师网站看到的一张图 简单易懂</h4><p><img src="https://www.edunvpei.com/tu/0.jpg" alt="此图来自其他网站"></p>
+<h3 id="2-远程仓库"><a href="#2-远程仓库" class="headerlink" title="2.远程仓库"></a>2.远程仓库</h3><h4 id="这里我们介绍使用SSH协议的远程仓库"><a href="#这里我们介绍使用SSH协议的远程仓库" class="headerlink" title="这里我们介绍使用SSH协议的远程仓库"></a>这里我们介绍使用SSH协议的远程仓库</h4><h4 id="1-创建SSH-Key"><a href="#1-创建SSH-Key" class="headerlink" title="(1)创建SSH Key"></a>(1)创建SSH Key</h4><p>   终端输入 ssh-keygen -t rsa -C “youremail”生成密钥       C:\Users\Administrator.ssh 在此路径下<br> <code>$   ssh-keygen -t rsa -C &quot;youremail&quot;</code></p>
+<h4 id="2-New-SSH-Key"><a href="#2-New-SSH-Key" class="headerlink" title="(2)New SSH Key"></a>(2)New SSH Key</h4><p>   登录github：个人头像 -&gt; Settings -&gt; SSH and GPG keys -&gt; New SSH Key 将公钥id_rsa.pub复制粘贴</p>
+<h4 id="3-在github创建仓库"><a href="#3-在github创建仓库" class="headerlink" title="(3)在github创建仓库"></a>(3)在github创建仓库</h4><p>   登录github：个人头像 -&gt; Your repositories -&gt; New</p>
+<h4 id="4-关联本地仓库与远程仓库"><a href="#4-关联本地仓库与远程仓库" class="headerlink" title="(4)关联本地仓库与远程仓库"></a>(4)关联本地仓库与远程仓库</h4><p> $ git remote add origin 后面加上你的SSH地址 (如：git remote add origin <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:2495a/gitstudy.git)</p>
+<h4 id="5-将本地库的内容推送的远程库"><a href="#5-将本地库的内容推送的远程库" class="headerlink" title="(5)将本地库的内容推送的远程库"></a>(5)将本地库的内容推送的远程库</h4><p> $ git push -u origin master</p>
+<h4 id="6-之后提交可以使用-git-push-origin-master"><a href="#6-之后提交可以使用-git-push-origin-master" class="headerlink" title="(6)之后提交可以使用 git push origin master"></a>(6)之后提交可以使用 git push origin master</h4><h4 id="7-从远程库拉取内容到本地库"><a href="#7-从远程库拉取内容到本地库" class="headerlink" title="(7)从远程库拉取内容到本地库"></a>(7)从远程库拉取内容到本地库</h4><p>$ git clone 后面加上你的SSH地址(如：git clone <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:2495a/gitstudy.git)</p>
+<h3 id="3-分支"><a href="#3-分支" class="headerlink" title="3.分支"></a>3.分支</h3><h4 id="1-创建分支"><a href="#1-创建分支" class="headerlink" title="(1)创建分支"></a>(1)创建分支</h4><p>$ git checkout -b dev <strong>创建名为dev的分支并切换到dev分支</strong></p>
+<h4 id="2-查看分支"><a href="#2-查看分支" class="headerlink" title="(2)查看分支"></a>(2)查看分支</h4><p>$ git branch <strong>列出所有分支</strong></p>
+<h4 id="3-切换分支"><a href="#3-切换分支" class="headerlink" title="(3)切换分支"></a>(3)切换分支</h4><p>$ git checkout master <strong>切换到master分支</strong></p>
+<h4 id="4-合并分支"><a href="#4-合并分支" class="headerlink" title="(4)合并分支"></a>(4)合并分支</h4><p>$ git merge dev <strong>现在处于master分支 与dev分支合并</strong></p>
+<h4 id="5-删除分支"><a href="#5-删除分支" class="headerlink" title="(5)删除分支"></a>(5)删除分支</h4><p>$ git branch -d dev <strong>删除dev分支</strong></p>
+<h3 id="4-多人协作"><a href="#4-多人协作" class="headerlink" title="4. 多人协作"></a>4. 多人协作</h3><h4 id="1-将合作者的公钥添加到个人的账户中"><a href="#1-将合作者的公钥添加到个人的账户中" class="headerlink" title="(1)将合作者的公钥添加到个人的账户中"></a>(1)将合作者的公钥添加到个人的账户中</h4><h4 id="2-在github中添加成员"><a href="#2-在github中添加成员" class="headerlink" title="(2)在github中添加成员"></a>(2)在github中添加成员</h4><p>登录github：找到你的仓库 -&gt; Settings -&gt; Collaborators -&gt; Add Collaborator</p>
+<h4 id="3-合作者拉取远程仓库中的项目"><a href="#3-合作者拉取远程仓库中的项目" class="headerlink" title="(3)合作者拉取远程仓库中的项目"></a>(3)合作者拉取远程仓库中的项目</h4><h4 id="4-项目成员在本地创建dev分支-在dev分支的基础上分别创建更多分支进行项目的开发"><a href="#4-项目成员在本地创建dev分支-在dev分支的基础上分别创建更多分支进行项目的开发" class="headerlink" title="(4)项目成员在本地创建dev分支 在dev分支的基础上分别创建更多分支进行项目的开发"></a>(4)项目成员在本地创建dev分支 在dev分支的基础上分别创建更多分支进行项目的开发</h4><h4 id="5-合并分支-可以时不时的进行分支合并"><a href="#5-合并分支-可以时不时的进行分支合并" class="headerlink" title="(5)合并分支(可以时不时的进行分支合并)"></a>(5)合并分支(可以时不时的进行分支合并)</h4><p>以上也有一些命令没有说到 请遇到相应的情况自行搜索</p>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+      <a href="/2111/11/11/about/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            Beginning
+          
+        </div>
+      </a>
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2019/02/19/webpack/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">webpack</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
+<script src="https://jjeejj.github.io/js/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '10d6a03a093f11012fbc',
+    client_secret: '3904764d837d6ee9c88bb36265704d8ac182d4cb',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/psb.webp" title="图片来自网络">
+    <h3 class="avatar-name">
+      
+        Hu Junming
+      
+    </h3>
+    <p class="avatar-slogan">
+      人最大的劣根性，就是雙眼都用來盯著別人和外邊的世界，難以自檢。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2111/11/">November 2111</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2111/11/11/about/">Beginning</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/21/git/">git</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/19/webpack/">webpack</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/20/jwt/">node中最简单的jwt demo</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/17/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2019 Hu Junming &nbsp;&nbsp;
+    by <a href="http://hexo.io/" target="_blank">myself</a>
+    <a href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">总浏览量:<span id="busuanzi_value_site_pv"></span></span>
+  </div>
+</footer>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>
