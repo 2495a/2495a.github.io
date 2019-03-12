@@ -1,213 +1,246 @@
 <!DOCTYPE html>
-<html lang>
+<html>
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
   
-  <meta name="keywords" content="网站关键字">
-  <meta name="description" content="网站简介">
+
   
-  <title>Hu Junming</title>
+  <title>node中最简单的jwt demo | Hu Junming</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-    <!-- stylesheets list from config.yml -->
-    
-      <link rel="stylesheet" href="/css/materialize.min.css">
-    
-      <link rel="stylesheet" href="/css/main.min.css">
-    
   
-  <style type="text/css">
-      html{
-          font-family: sans-serif;
-          font-weight: 300;
-      }
-      @font-face {
-          font-family: 'Material Icons';
-          font-style: normal;
-          font-weight: 400;
-          src: url(/fonts/MaterialIcons-Regular.eot);
-          src: url(/fonts/MaterialIcons-Regular.woff2) format('woff2'),
-          url(/fonts/MaterialIcons-Regular.woff) format('woff'),
-          url(/fonts/MaterialIcons-Regular.ttf) format('truetype')
-      }
-  </style>
-<link rel="shortcut icon" href="/source/favicon.ico">
+  
+  <meta name="description" content="以注册登录为例">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node中最简单的jwt demo">
+<meta property="og:url" content="http://yoursite.com/2018/02/20/jwt/index.html">
+<meta property="og:site_name" content="Hu Junming">
+<meta property="og:description" content="以注册登录为例">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-02-20T12:58:54.041Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="node中最简单的jwt demo">
+<meta name="twitter:description" content="以注册登录为例">
+  
+    <link rel="alternate" href="/atom.xml" title="Hu Junming" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/Cloud_Snow_Moon_128px_1179853_easyicon.net.ico">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
 </head>
+</html>
 <body>
-<div id="menu-box"><a href="javascript:void(0)" id="menu" data-activates="slide-out" class="button-collapse menu"><span class="nav-btn"></span></a></div>
-<div id="menu-outer">
-  <div id="menu-inner">
-      <ul id="slide-out" class="side-nav">
-    <div class="nav-header" style="background-image: url(/images/header-bg.png);background-color:#26A69A">
-    <div class="header-box"><img src="/images/header.png" ondragstart="return false;"></div>
-    <p>Hu Junming</p>
-    <div class="nav-link">
-        
-        <a href="http://example.com" target="_blank"> <div class="link-box twitter"></div></a>
-        
-        
-        <a href="http://example.com" target="_blank"><div class="link-box github"></div></a>
-        
-        
-        <a href="mailto:http://example.com"><div class="link-box email"></div></a>
-        
-        
-        <a href="http://example.com" target="_blank"><div class="link-box weibo"></div></a>
-        
-        
-        <a href="http://example.com" target="_blank"> <div class="link-box zhihu"></div></a>
-        
-    </div>
-    <div class="nav-search">
-        <form id="search-form"> <!-- 搜索框相关 -->
-            <input type="text" id="local-search-input" name="q" results="0" placeholder="搜索..." class="search form-control" autocomplete="off" autocorrect="off">
-            <div class="nav-search-img"><i class="material-icons">search</i></div>
-        </form>
-        <div id="local-search-result"></div> <!-- 搜索结果区 -->
-        <p class="no-result">无搜索结果</p>
-    </div>
-</div>
-    <!--Homepage-->
-
-<li class="nav-list">
-    <a href="/" target="_self">
-        <div class="nav-ico"><i class="material-icons">home</i> </div><p>主页</p>
-    </a>
-</li>
-
-<!--archives-->
-
-<li class="nav-list dropdown-btn">
-    <a class target="_self">
-        <div class="nav-ico"><i class="material-icons">assignment</i></div><p>归档</p><div class="dropdown-ico"><i class="material-icons">arrow_drop_down</i></div>
-    </a>
-</li>
-
-<ul class="dropdown-menu dropdown">
-    <li class="nav-dropdown-list">
-        <a class="archive-link" href="/archives/2111/11/">November 2111<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2019/02/">February 2019<span class="archive-count">3</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2018/02/">February 2018<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/05/">May 2017<span class="archive-count">1</span></a>
-    </li>
-</ul>
-<!--categories-->
-
-<ul class="dropdown-menu dropdown">
-    <li class="nav-dropdown-list">
-        
-    </li>
-</ul>
-<!--tags-->
-
-<li class="nav-list">
-    <a href="/archives" target="_self">
-        <div class="nav-ico"><i class="material-icons">bookmark</i> </div><p>标签</p>
-    </a>
-</li>
-
-<!--photo-->
-
-<!--friends-->
-
-<!--about-->
-
-
-</ul>
-
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title>首页</a>
+      
+        <a class="nav-item" href="/archives" title>归档</a>
+      
+    </nav>
   </div>
-</div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-jwt" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      node中最简单的jwt demo
+    </h1>
+  
 
-<div id="content-outer">
-  <div id="content-inner">
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2018/02/20/jwt/" class="article-date">
+  <time datetime="2018-02-20T12:41:35.000Z" itemprop="datePublished">2018-02-20</time>
+</a>
     
-<article id="post">
-  <div class="post-page-title" style="background-color:#26A69A;background-image:url(/images/random/vateral-15.png)">
-  <h2>node中最简单的jwt demo</h2>
-    
-  <p>作者:Hu Junming &nbsp&nbsp 发布于:<time datetime="2018-02-20T12:41:35.000Z">
-          2018-02-20
-    </time>
-  </p>
     
   </div>
-  <div class="post-page-content">
-  <h3 id="以注册登录为例"><a href="#以注册登录为例" class="headerlink" title="以注册登录为例"></a>以注册登录为例</h3><a id="more"></a>
+  
+    <span id="busuanzi_container_page_pv">
+      阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-doorframe" itemprop="articleBody">
+      
+        <h3 id="以注册登录为例"><a href="#以注册登录为例" class="headerlink" title="以注册登录为例"></a>以注册登录为例</h3><a id="more"></a>
 <hr>
-<h4 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h4><h4 id="下载MongoDB"><a href="#下载MongoDB" class="headerlink" title="下载MongoDB"></a>下载MongoDB</h4><h4 id="创建以下目录文件"><a href="#创建以下目录文件" class="headerlink" title="创建以下目录文件"></a>创建以下目录文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">jwt</span><br><span class="line">├── model</span><br><span class="line">├── ├──user.js</span><br><span class="line">├── app.js</span><br><span class="line">├── config.js</span><br></pre></td></tr></table></figure>
-<h4 id="下载express、jwt-simple、mongoose"><a href="#下载express、jwt-simple、mongoose" class="headerlink" title="下载express、jwt-simple、mongoose"></a>下载express、jwt-simple、mongoose</h4><h4 id="npm-install-express"><a href="#npm-install-express" class="headerlink" title="npm install express"></a><code>npm install express</code></h4><h4 id="npm-install-jwt-simple"><a href="#npm-install-jwt-simple" class="headerlink" title="npm install jwt-simple"></a><code>npm install jwt-simple</code></h4><h4 id="npm-install-mongoose"><a href="#npm-install-mongoose" class="headerlink" title="npm install mongoose"></a><code>npm install mongoose</code></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//config.js</span><br><span class="line">//定义数据库相关常量</span><br><span class="line">module.exports = &#123;</span><br><span class="line">   <span class="string">"db_url"</span>:<span class="string">"mongodb://localhost:27017/jwt"</span>,</span><br><span class="line">   <span class="string">"secret"</span>:<span class="string">"watbullitcebl"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//user.js</span><br><span class="line">//操作数据库</span><br><span class="line"><span class="built_in">let</span> mongoose = require(<span class="string">'mongoose'</span>)</span><br><span class="line"><span class="built_in">let</span> &#123;db_url&#125; = require(<span class="string">'../config'</span>)</span><br><span class="line">mongoose.connect(db_url,&#123;useNewUrlParser:<span class="literal">true</span>&#125;)</span><br><span class="line">//创建一个骨架</span><br><span class="line"><span class="built_in">let</span> userSchema = new mongoose.Schema(&#123;</span><br><span class="line">    username:String,</span><br><span class="line">    password:String</span><br><span class="line">&#125;)</span><br><span class="line">//定义数据库模块</span><br><span class="line"><span class="built_in">let</span> User = mongoose.model(<span class="string">'User'</span>,userSchema)</span><br><span class="line">module.exports = User</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">//app.js</span><br><span class="line"><span class="built_in">let</span> express = require(<span class="string">'express'</span>)</span><br><span class="line"><span class="built_in">let</span> jwt = require(<span class="string">'jwt-simple'</span>)</span><br><span class="line"><span class="built_in">let</span> bodyParse = require(<span class="string">'body-parser'</span>)</span><br><span class="line"><span class="built_in">let</span> app = express()</span><br><span class="line">app.use(bodyParse.json())</span><br><span class="line"><span class="built_in">let</span> User = require(<span class="string">'./model/user'</span>)</span><br><span class="line"><span class="built_in">let</span> config = require(<span class="string">'./config'</span>)</span><br><span class="line"><span class="built_in">let</span> &#123;secret&#125; = config</span><br><span class="line"></span><br><span class="line">//注册  &#123;username:<span class="string">''</span>,password:<span class="string">''</span>&#125;</span><br><span class="line">app.get(<span class="string">'/reg'</span>,async <span class="keyword">function</span>(req,res)&#123;</span><br><span class="line">	// console.log(req.headers)</span><br><span class="line">	console.log(req.headers[<span class="string">'authorization'</span>])</span><br><span class="line">	<span class="built_in">let</span> user = req.query</span><br><span class="line">	try&#123;</span><br><span class="line">		user = await User.create(user)</span><br><span class="line">		res.json(&#123;</span><br><span class="line">			code:0,</span><br><span class="line">			data:&#123;</span><br><span class="line">				user:&#123;</span><br><span class="line">					username:user.username,</span><br><span class="line">					password:user.password</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;,</span><br><span class="line">			msg:<span class="string">"注册成功"</span></span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;catch(e)&#123;</span><br><span class="line">		res.json(&#123;</span><br><span class="line">			code:1,</span><br><span class="line">			msg:<span class="string">"注册失败"</span></span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br><span class="line">app.listen(3000,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	console.log(<span class="string">'启动成功'</span>)</span><br><span class="line">&#125;)</span><br><span class="line">//登录</span><br><span class="line">app.get(<span class="string">'/login'</span>,async <span class="keyword">function</span>(req,res)&#123;</span><br><span class="line">	<span class="built_in">let</span> user = req.query</span><br><span class="line">	user = await User.findOne(user)</span><br><span class="line">	<span class="keyword">if</span>(user)&#123;</span><br><span class="line">		<span class="built_in">let</span> token = jwt.encode(&#123;</span><br><span class="line">			username:user.userame,</span><br><span class="line">			password:user.password</span><br><span class="line">		&#125;,secret)</span><br><span class="line">		res.json(&#123;</span><br><span class="line">			code:0,</span><br><span class="line">			data:&#123;</span><br><span class="line">				token</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		res.json(&#123;</span><br><span class="line">			code:1,</span><br><span class="line">			msg:<span class="string">"用户不存在"</span></span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h4><h4 id="下载MongoDB"><a href="#下载MongoDB" class="headerlink" title="下载MongoDB"></a>下载MongoDB</h4><h4 id="创建以下目录文件"><a href="#创建以下目录文件" class="headerlink" title="创建以下目录文件"></a>创建以下目录文件</h4><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">jwt</span><br><span class="line">├── model</span><br><span class="line">├── ├──user.js</span><br><span class="line">├── app.js</span><br><span class="line">├── config.js</span><br></pre></td></tr></table></figure></div>
+<h4 id="下载express、jwt-simple、mongoose"><a href="#下载express、jwt-simple、mongoose" class="headerlink" title="下载express、jwt-simple、mongoose"></a>下载express、jwt-simple、mongoose</h4><h4 id="npm-install-express"><a href="#npm-install-express" class="headerlink" title="npm install express"></a><code>npm install express</code></h4><h4 id="npm-install-jwt-simple"><a href="#npm-install-jwt-simple" class="headerlink" title="npm install jwt-simple"></a><code>npm install jwt-simple</code></h4><h4 id="npm-install-mongoose"><a href="#npm-install-mongoose" class="headerlink" title="npm install mongoose"></a><code>npm install mongoose</code></h4><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//config.js</span><br><span class="line">//定义数据库相关常量</span><br><span class="line">module.exports = &#123;</span><br><span class="line">   <span class="string">"db_url"</span>:<span class="string">"mongodb://localhost:27017/jwt"</span>,</span><br><span class="line">   <span class="string">"secret"</span>:<span class="string">"watbullitcebl"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//user.js</span><br><span class="line">//操作数据库</span><br><span class="line"><span class="built_in">let</span> mongoose = require(<span class="string">'mongoose'</span>)</span><br><span class="line"><span class="built_in">let</span> &#123;db_url&#125; = require(<span class="string">'../config'</span>)</span><br><span class="line">mongoose.connect(db_url,&#123;useNewUrlParser:<span class="literal">true</span>&#125;)</span><br><span class="line">//创建一个骨架</span><br><span class="line"><span class="built_in">let</span> userSchema = new mongoose.Schema(&#123;</span><br><span class="line">    username:String,</span><br><span class="line">    password:String</span><br><span class="line">&#125;)</span><br><span class="line">//定义数据库模块</span><br><span class="line"><span class="built_in">let</span> User = mongoose.model(<span class="string">'User'</span>,userSchema)</span><br><span class="line">module.exports = User</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">//app.js</span><br><span class="line"><span class="built_in">let</span> express = require(<span class="string">'express'</span>)</span><br><span class="line"><span class="built_in">let</span> jwt = require(<span class="string">'jwt-simple'</span>)</span><br><span class="line"><span class="built_in">let</span> bodyParse = require(<span class="string">'body-parser'</span>)</span><br><span class="line"><span class="built_in">let</span> app = express()</span><br><span class="line">app.use(bodyParse.json())</span><br><span class="line"><span class="built_in">let</span> User = require(<span class="string">'./model/user'</span>)</span><br><span class="line"><span class="built_in">let</span> config = require(<span class="string">'./config'</span>)</span><br><span class="line"><span class="built_in">let</span> &#123;secret&#125; = config</span><br><span class="line"></span><br><span class="line">//注册  &#123;username:<span class="string">''</span>,password:<span class="string">''</span>&#125;</span><br><span class="line">app.get(<span class="string">'/reg'</span>,async <span class="keyword">function</span>(req,res)&#123;</span><br><span class="line">	// console.log(req.headers)</span><br><span class="line">	console.log(req.headers[<span class="string">'authorization'</span>])</span><br><span class="line">	<span class="built_in">let</span> user = req.query</span><br><span class="line">	try&#123;</span><br><span class="line">		user = await User.create(user)</span><br><span class="line">		res.json(&#123;</span><br><span class="line">			code:0,</span><br><span class="line">			data:&#123;</span><br><span class="line">				user:&#123;</span><br><span class="line">					username:user.username,</span><br><span class="line">					password:user.password</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;,</span><br><span class="line">			msg:<span class="string">"注册成功"</span></span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;catch(e)&#123;</span><br><span class="line">		res.json(&#123;</span><br><span class="line">			code:1,</span><br><span class="line">			msg:<span class="string">"注册失败"</span></span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br><span class="line">app.listen(3000,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	console.log(<span class="string">'启动成功'</span>)</span><br><span class="line">&#125;)</span><br><span class="line">//登录</span><br><span class="line">app.get(<span class="string">'/login'</span>,async <span class="keyword">function</span>(req,res)&#123;</span><br><span class="line">	<span class="built_in">let</span> user = req.query</span><br><span class="line">	user = await User.findOne(user)</span><br><span class="line">	<span class="keyword">if</span>(user)&#123;</span><br><span class="line">		<span class="built_in">let</span> token = jwt.encode(&#123;</span><br><span class="line">			username:user.userame,</span><br><span class="line">			password:user.password</span><br><span class="line">		&#125;,secret)</span><br><span class="line">		res.json(&#123;</span><br><span class="line">			code:0,</span><br><span class="line">			data:&#123;</span><br><span class="line">				token</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		res.json(&#123;</span><br><span class="line">			code:1,</span><br><span class="line">			msg:<span class="string">"用户不存在"</span></span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
   </div>
-  <!--评论块-->
+  
     
-
-</article>
-<nav class="post-nav">
-  <!-- Prev Nav -->
+<nav id="article-nav">
+  <div class="article-nav-block">
     
-  <a href="/2019/02/19/webpack/" id="post_nav-newer" class="post-nav-content prev-content">
-      新篇
-  </a>
+      <a href="/2019/02/19/webpack/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            webpack
+          
+        </div>
+      </a>
     
-
-
-  <!-- Next Nav -->
+  </div>
+  <div class="article-nav-block">
     
-  <a href="/2017/05/17/hello-world/" id="post_nav-older" class="post-nav-content next-content">
-      旧篇
-  </a>
+      <a href="/2017/05/17/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">Hello World</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
     
+  </div>
 </nav>
-<div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
-<div class="post-toc-none"><p>(无)</p></div>
-<div class="post-toc-box">
-    <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#以注册登录为例"><span class="post-toc-number">1.</span> <span class="post-toc-text">以注册登录为例</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装node"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">安装node</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#下载MongoDB"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">下载MongoDB</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#创建以下目录文件"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">创建以下目录文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#下载express、jwt-simple、mongoose"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">下载express、jwt-simple、mongoose</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#npm-install-express"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">npm install express</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#npm-install-jwt-simple"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">npm install jwt-simple</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#npm-install-mongoose"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">npm install mongoose</span></a></li></ol></li></ol>
-</div>
-<!--<div class="post-back"><i class="material-icons">arrow_back</i></div>-->
-<script type="text/javascript">
-    menu();
-</script>
-  </div>
-</div>
-<div id="bottom-outer">
-  <div id="bottom-inner">
-    <a id="top-button" onfocus="this.blur();"><div class="up upinbody" style="background-color:#26A69A"><i class="material-icons material-up">vertical_align_top</i></div></a>
 
-
-<p style="line-height: 45px">Copyright ©  2017  Hu Junming</p>
-<p style="line-height: 45px">Powered by <a href="https://hexo.io/" target="_blank"> Hexo </a> && Theme - <a href="https://github.com/moumao/hexo-theme-Vateral" target="_blank">Vateral</a></p>
-
-  </div>
-</div>
-
-<!--影集界面需要的资源-->
-
-
-
-<!-- scripts list from theme config.yml -->
-
-<script src="/js/jquery-3.1.1.min.js"></script>
-
-<script src="/js/materialize.min.js"></script>
-
-<script src="/js/main.min.js"></script>
-
-
+    
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
+<script src="https://jjeejj.github.io/js/gitment.js"></script>
 <script>
-    NProgress.start();
-    NProgress.done();
-    lazy();
-    links();
-    window.onpopstate = menu();
-    //pjax操作
-    $(document).pjax('a:not(.nopjax)', '#content-inner', {fragment:'#content-inner', timeout:8000});
-    $(document).on('pjax:start', NProgress.start).on('pjax:end', NProgress.done)
-        .on('pjax:end', () => {
-            dowmdiv();
-            lazy();
-            toc();
-            links();
-            menu();
-        });
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '10d6a03a093f11012fbc',
+    client_secret: '3904764d837d6ee9c88bb36265704d8ac182d4cb',
+  },
+})
+gitment.render('gitmentContainer')
 </script>
 
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/psb.webp" title="图片来自网络">
+    <h3 class="avatar-name">
+      
+        Hu Junming
+      
+    </h3>
+    <p class="avatar-slogan">
+      人最大的劣根性，就是雙眼都用來盯著別人和外邊的世界，難以自檢。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2111/11/">November 2111</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2111/11/11/about/">Beginning</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/27/mianshi/">mianshi</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/21/git/">git</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/19/webpack/">webpack</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/20/jwt/">node中最简单的jwt demo</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2019 Hu Junming &nbsp;&nbsp;
+    by <a href="http://hexo.io/" target="_blank">myself</a>
+    <a href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">总浏览量:<span id="busuanzi_value_site_pv"></span></span>
+  </div>
+</footer>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
 </body>
 </html>

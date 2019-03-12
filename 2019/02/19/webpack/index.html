@@ -1,223 +1,256 @@
 <!DOCTYPE html>
-<html lang>
+<html>
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
   
-  <meta name="keywords" content="网站关键字">
-  <meta name="description" content="网站简介">
+
   
-  <title>Hu Junming</title>
+  <title>webpack | Hu Junming</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-    <!-- stylesheets list from config.yml -->
-    
-      <link rel="stylesheet" href="/css/materialize.min.css">
-    
-      <link rel="stylesheet" href="/css/main.min.css">
-    
   
-  <style type="text/css">
-      html{
-          font-family: sans-serif;
-          font-weight: 300;
-      }
-      @font-face {
-          font-family: 'Material Icons';
-          font-style: normal;
-          font-weight: 400;
-          src: url(/fonts/MaterialIcons-Regular.eot);
-          src: url(/fonts/MaterialIcons-Regular.woff2) format('woff2'),
-          url(/fonts/MaterialIcons-Regular.woff) format('woff'),
-          url(/fonts/MaterialIcons-Regular.ttf) format('truetype')
-      }
-  </style>
-<link rel="shortcut icon" href="/source/favicon.ico">
+  
+  <meta name="description" content="webpack的配置">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack">
+<meta property="og:url" content="http://yoursite.com/2019/02/19/webpack/index.html">
+<meta property="og:site_name" content="Hu Junming">
+<meta property="og:description" content="webpack的配置">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-02-20T07:53:10.487Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="webpack">
+<meta name="twitter:description" content="webpack的配置">
+  
+    <link rel="alternate" href="/atom.xml" title="Hu Junming" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/Cloud_Snow_Moon_128px_1179853_easyicon.net.ico">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
 </head>
+</html>
 <body>
-<div id="menu-box"><a href="javascript:void(0)" id="menu" data-activates="slide-out" class="button-collapse menu"><span class="nav-btn"></span></a></div>
-<div id="menu-outer">
-  <div id="menu-inner">
-      <ul id="slide-out" class="side-nav">
-    <div class="nav-header" style="background-image: url(/images/header-bg.png);background-color:#26A69A">
-    <div class="header-box"><img src="/images/header.png" ondragstart="return false;"></div>
-    <p>Hu Junming</p>
-    <div class="nav-link">
-        
-        <a href="http://example.com" target="_blank"> <div class="link-box twitter"></div></a>
-        
-        
-        <a href="http://example.com" target="_blank"><div class="link-box github"></div></a>
-        
-        
-        <a href="mailto:http://example.com"><div class="link-box email"></div></a>
-        
-        
-        <a href="http://example.com" target="_blank"><div class="link-box weibo"></div></a>
-        
-        
-        <a href="http://example.com" target="_blank"> <div class="link-box zhihu"></div></a>
-        
-    </div>
-    <div class="nav-search">
-        <form id="search-form"> <!-- 搜索框相关 -->
-            <input type="text" id="local-search-input" name="q" results="0" placeholder="搜索..." class="search form-control" autocomplete="off" autocorrect="off">
-            <div class="nav-search-img"><i class="material-icons">search</i></div>
-        </form>
-        <div id="local-search-result"></div> <!-- 搜索结果区 -->
-        <p class="no-result">无搜索结果</p>
-    </div>
-</div>
-    <!--Homepage-->
-
-<li class="nav-list">
-    <a href="/" target="_self">
-        <div class="nav-ico"><i class="material-icons">home</i> </div><p>主页</p>
-    </a>
-</li>
-
-<!--archives-->
-
-<li class="nav-list dropdown-btn">
-    <a class target="_self">
-        <div class="nav-ico"><i class="material-icons">assignment</i></div><p>归档</p><div class="dropdown-ico"><i class="material-icons">arrow_drop_down</i></div>
-    </a>
-</li>
-
-<ul class="dropdown-menu dropdown">
-    <li class="nav-dropdown-list">
-        <a class="archive-link" href="/archives/2111/11/">November 2111<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2019/02/">February 2019<span class="archive-count">3</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2018/02/">February 2018<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/05/">May 2017<span class="archive-count">1</span></a>
-    </li>
-</ul>
-<!--categories-->
-
-<ul class="dropdown-menu dropdown">
-    <li class="nav-dropdown-list">
-        
-    </li>
-</ul>
-<!--tags-->
-
-<li class="nav-list">
-    <a href="/archives" target="_self">
-        <div class="nav-ico"><i class="material-icons">bookmark</i> </div><p>标签</p>
-    </a>
-</li>
-
-<!--photo-->
-
-<!--friends-->
-
-<!--about-->
-
-
-</ul>
-
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title>首页</a>
+      
+        <a class="nav-item" href="/archives" title>归档</a>
+      
+    </nav>
   </div>
-</div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-webpack" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      webpack
+    </h1>
+  
 
-<div id="content-outer">
-  <div id="content-inner">
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/02/19/webpack/" class="article-date">
+  <time datetime="2019-02-19T05:33:30.000Z" itemprop="datePublished">2019-02-19</time>
+</a>
     
-<article id="post">
-  <div class="post-page-title" style="background-color:#26A69A;background-image:url(/images/random/vateral-5.png)">
-  <h2>webpack</h2>
-    
-  <p>作者:Hu Junming &nbsp&nbsp 发布于:<time datetime="2019-02-19T05:33:30.000Z">
-          2019-02-19
-    </time>
-  </p>
     
   </div>
-  <div class="post-page-content">
-  <h1 id="webpack的配置"><a href="#webpack的配置" class="headerlink" title="webpack的配置"></a>webpack的配置</h1><a id="more"></a>
+  
+    <span id="busuanzi_container_page_pv">
+      阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-doorframe" itemprop="articleBody">
+      
+        <h1 id="webpack的配置"><a href="#webpack的配置" class="headerlink" title="webpack的配置"></a>webpack的配置</h1><a id="more"></a>
 <p>阅读全文</p>
-<h2 id="1-創建一個名為webpack的文件夾"><a href="#1-創建一個名為webpack的文件夾" class="headerlink" title="1. 創建一個名為webpack的文件夾"></a>1. 創建一個名為webpack的文件夾</h2><h4 id="npm-init-y-初始化文件夾-自動生成package-json文件"><a href="#npm-init-y-初始化文件夾-自動生成package-json文件" class="headerlink" title="npm init -y     初始化文件夾  自動生成package.json文件"></a><code>npm init -y     初始化文件夾  自動生成package.json文件</code></h4><h2 id="2-下載webpack-以及-webpack-cli"><a href="#2-下載webpack-以及-webpack-cli" class="headerlink" title="2. 下載webpack 以及 webpack-cli"></a>2. 下載webpack 以及 webpack-cli</h2><h4 id="npm-install-webpack-webpack-cli-D-這裡-D下载到开发依赖项中"><a href="#npm-install-webpack-webpack-cli-D-這裡-D下载到开发依赖项中" class="headerlink" title="npm install webpack webpack-cli -D  這裡-D下载到开发依赖项中"></a><code>npm install webpack webpack-cli -D  這裡-D下载到开发依赖项中</code></h4><h2 id="3-在webpack文件夾下創建如下目錄"><a href="#3-在webpack文件夾下創建如下目錄" class="headerlink" title="3. 在webpack文件夾下創建如下目錄"></a>3. 在webpack文件夾下創建如下目錄</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">webpack</span><br><span class="line">├── src</span><br><span class="line">├── ├──index.js</span><br><span class="line">├── webpack.config.js</span><br><span class="line">├── package.json</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//webpack.config.js</span><br><span class="line">module.exports=&#123;</span><br><span class="line">   entry:&#123;&#125;,//入口</span><br><span class="line">   output:&#123;&#125;//出口</span><br><span class="line">   module:&#123;&#125;,//编译压缩转换html、css、js、图片、媒体等文件</span><br><span class="line">   plugins:[],//添加功能插件</span><br><span class="line">   devServer:&#123;&#125;//配置webpack开发服务</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="3-1-在webpack-config-js中配置webpack打包的入口和出口"><a href="#3-1-在webpack-config-js中配置webpack打包的入口和出口" class="headerlink" title="3.1 在webpack.config.js中配置webpack打包的入口和出口"></a>3.1 在webpack.config.js中配置webpack打包的入口和出口</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> path = require(<span class="string">'path'</span>) //引入node中的path模块 方便之後的路徑配置</span><br><span class="line"></span><br><span class="line">//单入口配置</span><br><span class="line">module.exports = &#123;</span><br><span class="line">   entry:<span class="string">'./src/index.js'</span>, //入口 圍繞index.js文件打包</span><br><span class="line">   output:&#123;</span><br><span class="line">      path:path.resolve(__dirname,<span class="string">'dist'</span>), //打包完成的文件夾名</span><br><span class="line">      filename:<span class="string">'bundle[hash:6].js'</span> //这里只有一个入口 可以指定出口名字 并且可以添加<span class="built_in">hash</span>值</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//多入口配置</span><br><span class="line">module.exports = &#123;</span><br><span class="line">   entry:[<span class="string">'./src/index.js'</span>,<span class="string">'./src/index2.js'</span>], //这里可以写成数组 也可以写成对象</span><br><span class="line">   output:&#123;</span><br><span class="line">      path:path.resolve(__dirname,<span class="string">'dist'</span>),</span><br><span class="line">      filename:<span class="string">'[name].js'</span> //这里name是entry的键值</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">此时可以在js文件中写一些js语句  终端执行npx webpack命令即可打包 //需node版本8.2以上</span><br></pre></td></tr></table></figure>
-<h2 id="3-2-配置脚本命令"><a href="#3-2-配置脚本命令" class="headerlink" title="3.2 配置脚本命令"></a>3.2 配置脚本命令</h2><h4 id="npm-install-webpack-dev-server-D"><a href="#npm-install-webpack-dev-server-D" class="headerlink" title="npm install webpack-dev-server -D"></a><code>npm install webpack-dev-server -D</code></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">//package.json</span><br><span class="line">//在scripts中配置npm run build和npm run dev命令</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">"name"</span>: <span class="string">"webpack"</span>,</span><br><span class="line">  <span class="string">"version"</span>: <span class="string">"1.0.0"</span>,</span><br><span class="line">  <span class="string">"description"</span>: <span class="string">""</span>,</span><br><span class="line">  <span class="string">"main"</span>: <span class="string">"index.js"</span>,</span><br><span class="line">  <span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"test"</span>: <span class="string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span>,</span><br><span class="line">    <span class="string">"build"</span>: <span class="string">"webpack --config webpack.config.js"</span>,</span><br><span class="line">    <span class="string">"dev"</span>: <span class="string">"webpack-dev-server"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"keywords"</span>: [],</span><br><span class="line">  <span class="string">"author"</span>: <span class="string">""</span>,</span><br><span class="line">  <span class="string">"license"</span>: <span class="string">"ISC"</span>,</span><br><span class="line">  <span class="string">"devDependencies"</span>: &#123;</span><br><span class="line">    <span class="string">"cli"</span>: <span class="string">"^1.0.1"</span>,</span><br><span class="line">    <span class="string">"webpack"</span>: <span class="string">"^4.29.5"</span>,</span><br><span class="line">    <span class="string">"webpack-cli"</span>: <span class="string">"^3.2.3"</span>,</span><br><span class="line">    <span class="string">"webpack-dev-server"</span>: <span class="string">"^3.1.14"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">此时可以npm run build来打包或npm run dev来开发项目</span><br></pre></td></tr></table></figure>
-<h2 id="3-3-生成创建html入口文件"><a href="#3-3-生成创建html入口文件" class="headerlink" title="3.3 生成创建html入口文件"></a>3.3 生成创建html入口文件</h2><h4 id="npm-install-html-webpack-plugin-D"><a href="#npm-install-html-webpack-plugin-D" class="headerlink" title="npm install html-webpack-plugin -D"></a><code>npm install html-webpack-plugin -D</code></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">//webpack.config.js</span><br><span class="line"><span class="built_in">let</span> HtmlWebpackPlugin = require(<span class="string">'html-webpack-plugin'</span>)</span><br><span class="line">module.exports = &#123;</span><br><span class="line">  plugins:[</span><br><span class="line">    new Htmlwebpackplugin(&#123;</span><br><span class="line">      template:<span class="string">'./src/index.html'</span>,</span><br><span class="line">      filename:<span class="string">'index.html'</span>,</span><br><span class="line">      <span class="built_in">hash</span>:<span class="literal">true</span>,</span><br><span class="line">      minify:&#123;</span><br><span class="line">        removeAttrbuteQuoted:<span class="literal">true</span>,//去除双引号</span><br><span class="line">        collapseWhitespace:<span class="literal">true</span>//折叠去除空格</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">此时打包生成的dist文件夹中将存在index.html文件</span><br></pre></td></tr></table></figure>
-<h2 id="3-3-配置webpack开发服务"><a href="#3-3-配置webpack开发服务" class="headerlink" title="3.3 配置webpack开发服务"></a>3.3 配置webpack开发服务</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//webpack.config.js</span><br><span class="line">module.exports = &#123;</span><br><span class="line">   devServer:&#123;</span><br><span class="line">       contentBase:path.resolve(__dirname,<span class="string">'dist'</span>),//开发时的目录结构</span><br><span class="line">       host:<span class="string">'localhost'</span>,//开启服务的地址  ip地址</span><br><span class="line">       port:2222,//设置地址端口号</span><br><span class="line">       compress:<span class="literal">true</span>,//服务端压缩</span><br><span class="line">       progress:<span class="literal">true</span>//显示进度条</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line">   </span><br><span class="line"> 此时可以npm run dev在localhost:2222开发项目</span><br></pre></td></tr></table></figure>
-<h2 id="3-4-生成创建html入口文件"><a href="#3-4-生成创建html入口文件" class="headerlink" title="3.4 生成创建html入口文件"></a>3.4 生成创建html入口文件</h2><h4 id="npm-install-html-webpack-plugin-D-1"><a href="#npm-install-html-webpack-plugin-D-1" class="headerlink" title="npm install html-webpack-plugin -D"></a><code>npm install html-webpack-plugin -D</code></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">//webpack.config.js</span><br><span class="line"><span class="built_in">let</span> HtmlWebpackPlugin = require(<span class="string">'html-webpack-plugin'</span>)</span><br><span class="line">module.exports = &#123;</span><br><span class="line">  plugins:[</span><br><span class="line">    new Htmlwebpackplugin(&#123;</span><br><span class="line">      template:<span class="string">'./src/index.html'</span>,</span><br><span class="line">      filename:<span class="string">'index.html'</span>,</span><br><span class="line">      <span class="built_in">hash</span>:<span class="literal">true</span>,</span><br><span class="line">      minify:&#123;</span><br><span class="line">        removeAttrbuteQuoted:<span class="literal">true</span>,//去除双引号</span><br><span class="line">        collapseWhitespace:<span class="literal">true</span>//折叠去除空格</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">此时打包生成的dist文件夹中将存在index.html文件</span><br></pre></td></tr></table></figure>
-<h2 id="3-5-编译css文件"><a href="#3-5-编译css文件" class="headerlink" title="3.5 编译css文件"></a>3.5 编译css文件</h2><h4 id="npm-install-style-loader-css-loader-postcss-loader-autoprefixer-D"><a href="#npm-install-style-loader-css-loader-postcss-loader-autoprefixer-D" class="headerlink" title="npm install style-loader css-loader postcss-loader autoprefixer -D"></a><code>npm install style-loader css-loader postcss-loader autoprefixer -D</code></h4><h4 id="npm-install-less-loader-D"><a href="#npm-install-less-loader-D" class="headerlink" title="npm install less-loader -D"></a><code>npm install less-loader -D</code></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">//webpack.config.js</span><br><span class="line">module.exports = &#123;</span><br><span class="line">   module:&#123;</span><br><span class="line">      rules:[</span><br><span class="line">      	&#123;</span><br><span class="line">           <span class="built_in">test</span>:/\.css$/,</span><br><span class="line">           use:[<span class="string">'style-loader'</span>,<span class="string">'css-loader'</span>,<span class="string">'postcss-loader'</span>]//注意书写顺序</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">           <span class="built_in">test</span>:/\.less$/,</span><br><span class="line">           use:[<span class="string">'style-loader'</span>,<span class="string">'css-loader'</span>,<span class="string">'less-loader'</span>]</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">postcss-loader用于给css添加浏览器前缀</span><br><span class="line">需创建postcss.config.js文件</span><br><span class="line"></span><br><span class="line">//postcss.config.js</span><br><span class="line">module.exports=&#123;</span><br><span class="line">    plugins:[require(<span class="string">'autoprefixer'</span>)]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="3-6-提取打包css"><a href="#3-6-提取打包css" class="headerlink" title="3.6 提取打包css"></a>3.6 提取打包css</h2><h4 id="npm-install-mini-css-extract-plugin-D-此插件为webpack4-x插件"><a href="#npm-install-mini-css-extract-plugin-D-此插件为webpack4-x插件" class="headerlink" title="npm install mini-css-extract-plugin -D  此插件为webpack4.x插件"></a><code>npm install mini-css-extract-plugin -D  此插件为webpack4.x插件</code></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">//webpack.config.js</span><br><span class="line"><span class="built_in">let</span> Mincssextractplugin = require(<span class="string">'min-css-extract-plugin'</span>)</span><br><span class="line">module.exports = &#123;</span><br><span class="line">   plugins:[</span><br><span class="line">      new Minicssextractplugin(&#123;</span><br><span class="line">         filename:<span class="string">'main.css'</span></span><br><span class="line">      &#125;)</span><br><span class="line">   ],</span><br><span class="line">   module:&#123;</span><br><span class="line">      rules:[</span><br><span class="line">      	&#123;</span><br><span class="line">           <span class="built_in">test</span>:/\.css$/,</span><br><span class="line">           use:[Mincssextractplugin,<span class="string">'css-loader'</span>,<span class="string">'postcss-loader'</span>]//注意书写顺序</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">           <span class="built_in">test</span>:/\.less$/,</span><br><span class="line">           use:[Mincssextractplugin,<span class="string">'css-loader'</span>,<span class="string">'less-loader'</span>]</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="3-7-处理js"><a href="#3-7-处理js" class="headerlink" title="3.7 处理js"></a>3.7 处理js</h2><h4 id="npm-install-babel-core-babel-preset-env-babel-core-babel-babel-preset-env"><a href="#npm-install-babel-core-babel-preset-env-babel-core-babel-babel-preset-env" class="headerlink" title="npm install @babel/core @babel/preset-env @babel/core babel @babel-preset-env"></a><code>npm install @babel/core @babel/preset-env @babel/core babel @babel-preset-env</code></h4><h4 id="npm-install-babel-loader"><a href="#npm-install-babel-loader" class="headerlink" title="npm install babel-loader"></a><code>npm install babel-loader</code></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">//webpack.config.js</span><br><span class="line">module.exports = &#123;</span><br><span class="line">   module:&#123;</span><br><span class="line">      rules:[</span><br><span class="line">         &#123;</span><br><span class="line">            <span class="built_in">test</span>:/\.(js|jsx)$/,</span><br><span class="line">            use:&#123;</span><br><span class="line">               loader:<span class="string">'babel-loader'</span>,</span><br><span class="line">               options:&#123;</span><br><span class="line">                  presets:[<span class="string">'@babel/preset-env'</span>],</span><br><span class="line">                  plugins:[</span><br><span class="line">                     [<span class="string">'@babel/plugin-proposal-decorators'</span>,&#123;<span class="string">'legacy'</span>:<span class="literal">true</span>&#125;],</span><br><span class="line">                     [<span class="string">'@babel/plugin-proposal-class-properties'</span>,&#123;<span class="string">'loose'</span>:<span class="literal">true</span>&#125;],</span><br><span class="line">                     <span class="string">'@babel/plugin-transform-runtime'</span></span><br><span class="line">                  ]</span><br><span class="line">              &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            include:path.resolve(__dirname,<span class="string">'src'</span>),//包含</span><br><span class="line">            exclude:/node_modules/ //不包含</span><br><span class="line">          &#125;</span><br><span class="line">      ]</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="3-8-处理图片、字体与媒体文件"><a href="#3-8-处理图片、字体与媒体文件" class="headerlink" title="3.8 处理图片、字体与媒体文件"></a>3.8 处理图片、字体与媒体文件</h2><h4 id="npm-install-url-loader"><a href="#npm-install-url-loader" class="headerlink" title="npm install url-loader"></a><code>npm install url-loader</code></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">   module:&#123;</span><br><span class="line">      rules:[</span><br><span class="line">         &#123;</span><br><span class="line">            <span class="built_in">test</span>:/\.(jpg|png|gif|svg|jpeg|eot|ttf|woff|woff2)$/,</span><br><span class="line">            use:&#123;</span><br><span class="line">              loader:<span class="string">'url-loader'</span>,</span><br><span class="line">              options:&#123;</span><br><span class="line">                 <span class="built_in">limit</span>:1000,//图片小于这个值转换成base64</span><br><span class="line">                  name:<span class="string">'imgs/[name].[ext]'</span></span><br><span class="line">              &#125;</span><br><span class="line">            &#125;</span><br><span class="line">         &#125;,</span><br><span class="line">         &#123;</span><br><span class="line">            <span class="built_in">test</span>: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,</span><br><span class="line">            use:&#123;</span><br><span class="line">             	loader:<span class="string">'url-loader'</span>,</span><br><span class="line">                options:&#123;</span><br><span class="line">                  name:<span class="string">'audios/[name].[ext]'</span>,</span><br><span class="line">                  <span class="built_in">limit</span>:10</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">         &#125;</span><br><span class="line">      ]</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="3-9-处理html中的img图"><a href="#3-9-处理html中的img图" class="headerlink" title="3.9 处理html中的img图"></a>3.9 处理html中的img图</h2><h4 id="npm-install-html-withimg-loader-D"><a href="#npm-install-html-withimg-loader-D" class="headerlink" title="npm install html-withimg-loader -D"></a><code>npm install html-withimg-loader -D</code></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//webpack.config.js</span><br><span class="line">module.exports = &#123;</span><br><span class="line">    module:&#123;</span><br><span class="line">       rules:[</span><br><span class="line">           &#123;</span><br><span class="line">             <span class="built_in">test</span>:/\.html$/,</span><br><span class="line">             use:<span class="string">'html-withimg-loader'</span></span><br><span class="line">           &#125;</span><br><span class="line">       ]</span><br><span class="line">     &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="3-10-配置优化项"><a href="#3-10-配置优化项" class="headerlink" title="3.10 配置优化项"></a>3.10 配置优化项</h2><h4 id="npm-install-optimize-css-assets-webpack-plugin-uglifyjs-webpack-plugin-D"><a href="#npm-install-optimize-css-assets-webpack-plugin-uglifyjs-webpack-plugin-D" class="headerlink" title="npm install optimize-css-assets-webpack-plugin  uglifyjs-webpack-plugin -D"></a><code>npm install optimize-css-assets-webpack-plugin  uglifyjs-webpack-plugin -D</code></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//webpack.config.js</span><br><span class="line"><span class="built_in">let</span> Ocawp = require(<span class="string">'optimize-css-assets-webpack-plugin'</span>)</span><br><span class="line"><span class="built_in">let</span> Uwp = require(<span class="string">'uglifyjs-webpack-plugin'</span>)</span><br><span class="line">module.exports = &#123;</span><br><span class="line">    optimization:&#123;</span><br><span class="line">       minimizer:[</span><br><span class="line">          new Uwp(&#123;</span><br><span class="line">             cache: <span class="literal">true</span>, //缓存 </span><br><span class="line">             parallel: <span class="literal">true</span>, //是否并发打包</span><br><span class="line">             sourceMap: <span class="literal">true</span> // <span class="built_in">set</span> to <span class="literal">true</span> <span class="keyword">if</span> you want JS <span class="built_in">source</span> maps</span><br><span class="line">          &#125;),</span><br><span class="line">          new Ocawp(&#123;&#125;)</span><br><span class="line">       ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="1-創建一個名為webpack的文件夾"><a href="#1-創建一個名為webpack的文件夾" class="headerlink" title="1. 創建一個名為webpack的文件夾"></a>1. 創建一個名為webpack的文件夾</h2><h4 id="npm-init-y-初始化文件夾-自動生成package-json文件"><a href="#npm-init-y-初始化文件夾-自動生成package-json文件" class="headerlink" title="npm init -y     初始化文件夾  自動生成package.json文件"></a><code>npm init -y     初始化文件夾  自動生成package.json文件</code></h4><h2 id="2-下載webpack-以及-webpack-cli"><a href="#2-下載webpack-以及-webpack-cli" class="headerlink" title="2. 下載webpack 以及 webpack-cli"></a>2. 下載webpack 以及 webpack-cli</h2><h4 id="npm-install-webpack-webpack-cli-D-這裡-D下载到开发依赖项中"><a href="#npm-install-webpack-webpack-cli-D-這裡-D下载到开发依赖项中" class="headerlink" title="npm install webpack webpack-cli -D  這裡-D下载到开发依赖项中"></a><code>npm install webpack webpack-cli -D  這裡-D下载到开发依赖项中</code></h4><h2 id="3-在webpack文件夾下創建如下目錄"><a href="#3-在webpack文件夾下創建如下目錄" class="headerlink" title="3. 在webpack文件夾下創建如下目錄"></a>3. 在webpack文件夾下創建如下目錄</h2><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">webpack</span><br><span class="line">├── src</span><br><span class="line">├── ├──index.js</span><br><span class="line">├── webpack.config.js</span><br><span class="line">├── package.json</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//webpack.config.js</span><br><span class="line">module.exports=&#123;</span><br><span class="line">   entry:&#123;&#125;,//入口</span><br><span class="line">   output:&#123;&#125;//出口</span><br><span class="line">   module:&#123;&#125;,//编译压缩转换html、css、js、图片、媒体等文件</span><br><span class="line">   plugins:[],//添加功能插件</span><br><span class="line">   devServer:&#123;&#125;//配置webpack开发服务</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h2 id="3-1-在webpack-config-js中配置webpack打包的入口和出口"><a href="#3-1-在webpack-config-js中配置webpack打包的入口和出口" class="headerlink" title="3.1 在webpack.config.js中配置webpack打包的入口和出口"></a>3.1 在webpack.config.js中配置webpack打包的入口和出口</h2><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> path = require(<span class="string">'path'</span>) //引入node中的path模块 方便之後的路徑配置</span><br><span class="line"></span><br><span class="line">//单入口配置</span><br><span class="line">module.exports = &#123;</span><br><span class="line">   entry:<span class="string">'./src/index.js'</span>, //入口 圍繞index.js文件打包</span><br><span class="line">   output:&#123;</span><br><span class="line">      path:path.resolve(__dirname,<span class="string">'dist'</span>), //打包完成的文件夾名</span><br><span class="line">      filename:<span class="string">'bundle[hash:6].js'</span> //这里只有一个入口 可以指定出口名字 并且可以添加<span class="built_in">hash</span>值</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//多入口配置</span><br><span class="line">module.exports = &#123;</span><br><span class="line">   entry:[<span class="string">'./src/index.js'</span>,<span class="string">'./src/index2.js'</span>], //这里可以写成数组 也可以写成对象</span><br><span class="line">   output:&#123;</span><br><span class="line">      path:path.resolve(__dirname,<span class="string">'dist'</span>),</span><br><span class="line">      filename:<span class="string">'[name].js'</span> //这里name是entry的键值</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">此时可以在js文件中写一些js语句  终端执行npx webpack命令即可打包 //需node版本8.2以上</span><br></pre></td></tr></table></figure></div>
+<h2 id="3-2-配置脚本命令"><a href="#3-2-配置脚本命令" class="headerlink" title="3.2 配置脚本命令"></a>3.2 配置脚本命令</h2><h4 id="npm-install-webpack-dev-server-D"><a href="#npm-install-webpack-dev-server-D" class="headerlink" title="npm install webpack-dev-server -D"></a><code>npm install webpack-dev-server -D</code></h4><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">//package.json</span><br><span class="line">//在scripts中配置npm run build和npm run dev命令</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">"name"</span>: <span class="string">"webpack"</span>,</span><br><span class="line">  <span class="string">"version"</span>: <span class="string">"1.0.0"</span>,</span><br><span class="line">  <span class="string">"description"</span>: <span class="string">""</span>,</span><br><span class="line">  <span class="string">"main"</span>: <span class="string">"index.js"</span>,</span><br><span class="line">  <span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"test"</span>: <span class="string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span>,</span><br><span class="line">    <span class="string">"build"</span>: <span class="string">"webpack --config webpack.config.js"</span>,</span><br><span class="line">    <span class="string">"dev"</span>: <span class="string">"webpack-dev-server"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"keywords"</span>: [],</span><br><span class="line">  <span class="string">"author"</span>: <span class="string">""</span>,</span><br><span class="line">  <span class="string">"license"</span>: <span class="string">"ISC"</span>,</span><br><span class="line">  <span class="string">"devDependencies"</span>: &#123;</span><br><span class="line">    <span class="string">"cli"</span>: <span class="string">"^1.0.1"</span>,</span><br><span class="line">    <span class="string">"webpack"</span>: <span class="string">"^4.29.5"</span>,</span><br><span class="line">    <span class="string">"webpack-cli"</span>: <span class="string">"^3.2.3"</span>,</span><br><span class="line">    <span class="string">"webpack-dev-server"</span>: <span class="string">"^3.1.14"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">此时可以npm run build来打包或npm run dev来开发项目</span><br></pre></td></tr></table></figure></div>
+<h2 id="3-3-生成创建html入口文件"><a href="#3-3-生成创建html入口文件" class="headerlink" title="3.3 生成创建html入口文件"></a>3.3 生成创建html入口文件</h2><h4 id="npm-install-html-webpack-plugin-D"><a href="#npm-install-html-webpack-plugin-D" class="headerlink" title="npm install html-webpack-plugin -D"></a><code>npm install html-webpack-plugin -D</code></h4><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">//webpack.config.js</span><br><span class="line"><span class="built_in">let</span> HtmlWebpackPlugin = require(<span class="string">'html-webpack-plugin'</span>)</span><br><span class="line">module.exports = &#123;</span><br><span class="line">  plugins:[</span><br><span class="line">    new Htmlwebpackplugin(&#123;</span><br><span class="line">      template:<span class="string">'./src/index.html'</span>,</span><br><span class="line">      filename:<span class="string">'index.html'</span>,</span><br><span class="line">      <span class="built_in">hash</span>:<span class="literal">true</span>,</span><br><span class="line">      minify:&#123;</span><br><span class="line">        removeAttrbuteQuoted:<span class="literal">true</span>,//去除双引号</span><br><span class="line">        collapseWhitespace:<span class="literal">true</span>//折叠去除空格</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">此时打包生成的dist文件夹中将存在index.html文件</span><br></pre></td></tr></table></figure></div>
+<h2 id="3-3-配置webpack开发服务"><a href="#3-3-配置webpack开发服务" class="headerlink" title="3.3 配置webpack开发服务"></a>3.3 配置webpack开发服务</h2><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//webpack.config.js</span><br><span class="line">module.exports = &#123;</span><br><span class="line">   devServer:&#123;</span><br><span class="line">       contentBase:path.resolve(__dirname,<span class="string">'dist'</span>),//开发时的目录结构</span><br><span class="line">       host:<span class="string">'localhost'</span>,//开启服务的地址  ip地址</span><br><span class="line">       port:2222,//设置地址端口号</span><br><span class="line">       compress:<span class="literal">true</span>,//服务端压缩</span><br><span class="line">       progress:<span class="literal">true</span>//显示进度条</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line">   </span><br><span class="line"> 此时可以npm run dev在localhost:2222开发项目</span><br></pre></td></tr></table></figure></div>
+<h2 id="3-4-生成创建html入口文件"><a href="#3-4-生成创建html入口文件" class="headerlink" title="3.4 生成创建html入口文件"></a>3.4 生成创建html入口文件</h2><h4 id="npm-install-html-webpack-plugin-D-1"><a href="#npm-install-html-webpack-plugin-D-1" class="headerlink" title="npm install html-webpack-plugin -D"></a><code>npm install html-webpack-plugin -D</code></h4><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">//webpack.config.js</span><br><span class="line"><span class="built_in">let</span> HtmlWebpackPlugin = require(<span class="string">'html-webpack-plugin'</span>)</span><br><span class="line">module.exports = &#123;</span><br><span class="line">  plugins:[</span><br><span class="line">    new Htmlwebpackplugin(&#123;</span><br><span class="line">      template:<span class="string">'./src/index.html'</span>,</span><br><span class="line">      filename:<span class="string">'index.html'</span>,</span><br><span class="line">      <span class="built_in">hash</span>:<span class="literal">true</span>,</span><br><span class="line">      minify:&#123;</span><br><span class="line">        removeAttrbuteQuoted:<span class="literal">true</span>,//去除双引号</span><br><span class="line">        collapseWhitespace:<span class="literal">true</span>//折叠去除空格</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">此时打包生成的dist文件夹中将存在index.html文件</span><br></pre></td></tr></table></figure></div>
+<h2 id="3-5-编译css文件"><a href="#3-5-编译css文件" class="headerlink" title="3.5 编译css文件"></a>3.5 编译css文件</h2><h4 id="npm-install-style-loader-css-loader-postcss-loader-autoprefixer-D"><a href="#npm-install-style-loader-css-loader-postcss-loader-autoprefixer-D" class="headerlink" title="npm install style-loader css-loader postcss-loader autoprefixer -D"></a><code>npm install style-loader css-loader postcss-loader autoprefixer -D</code></h4><h4 id="npm-install-less-loader-D"><a href="#npm-install-less-loader-D" class="headerlink" title="npm install less-loader -D"></a><code>npm install less-loader -D</code></h4><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">//webpack.config.js</span><br><span class="line">module.exports = &#123;</span><br><span class="line">   module:&#123;</span><br><span class="line">      rules:[</span><br><span class="line">      	&#123;</span><br><span class="line">           <span class="built_in">test</span>:/\.css$/,</span><br><span class="line">           use:[<span class="string">'style-loader'</span>,<span class="string">'css-loader'</span>,<span class="string">'postcss-loader'</span>]//注意书写顺序</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">           <span class="built_in">test</span>:/\.less$/,</span><br><span class="line">           use:[<span class="string">'style-loader'</span>,<span class="string">'css-loader'</span>,<span class="string">'less-loader'</span>]</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">postcss-loader用于给css添加浏览器前缀</span><br><span class="line">需创建postcss.config.js文件</span><br><span class="line"></span><br><span class="line">//postcss.config.js</span><br><span class="line">module.exports=&#123;</span><br><span class="line">    plugins:[require(<span class="string">'autoprefixer'</span>)]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h2 id="3-6-提取打包css"><a href="#3-6-提取打包css" class="headerlink" title="3.6 提取打包css"></a>3.6 提取打包css</h2><h4 id="npm-install-mini-css-extract-plugin-D-此插件为webpack4-x插件"><a href="#npm-install-mini-css-extract-plugin-D-此插件为webpack4-x插件" class="headerlink" title="npm install mini-css-extract-plugin -D  此插件为webpack4.x插件"></a><code>npm install mini-css-extract-plugin -D  此插件为webpack4.x插件</code></h4><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">//webpack.config.js</span><br><span class="line"><span class="built_in">let</span> Mincssextractplugin = require(<span class="string">'min-css-extract-plugin'</span>)</span><br><span class="line">module.exports = &#123;</span><br><span class="line">   plugins:[</span><br><span class="line">      new Minicssextractplugin(&#123;</span><br><span class="line">         filename:<span class="string">'main.css'</span></span><br><span class="line">      &#125;)</span><br><span class="line">   ],</span><br><span class="line">   module:&#123;</span><br><span class="line">      rules:[</span><br><span class="line">      	&#123;</span><br><span class="line">           <span class="built_in">test</span>:/\.css$/,</span><br><span class="line">           use:[Mincssextractplugin,<span class="string">'css-loader'</span>,<span class="string">'postcss-loader'</span>]//注意书写顺序</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">           <span class="built_in">test</span>:/\.less$/,</span><br><span class="line">           use:[Mincssextractplugin,<span class="string">'css-loader'</span>,<span class="string">'less-loader'</span>]</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h2 id="3-7-处理js"><a href="#3-7-处理js" class="headerlink" title="3.7 处理js"></a>3.7 处理js</h2><h4 id="npm-install-babel-core-babel-preset-env-babel-core-babel-babel-preset-env"><a href="#npm-install-babel-core-babel-preset-env-babel-core-babel-babel-preset-env" class="headerlink" title="npm install @babel/core @babel/preset-env @babel/core babel @babel-preset-env"></a><code>npm install @babel/core @babel/preset-env @babel/core babel @babel-preset-env</code></h4><h4 id="npm-install-babel-loader"><a href="#npm-install-babel-loader" class="headerlink" title="npm install babel-loader"></a><code>npm install babel-loader</code></h4><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">//webpack.config.js</span><br><span class="line">module.exports = &#123;</span><br><span class="line">   module:&#123;</span><br><span class="line">      rules:[</span><br><span class="line">         &#123;</span><br><span class="line">            <span class="built_in">test</span>:/\.(js|jsx)$/,</span><br><span class="line">            use:&#123;</span><br><span class="line">               loader:<span class="string">'babel-loader'</span>,</span><br><span class="line">               options:&#123;</span><br><span class="line">                  presets:[<span class="string">'@babel/preset-env'</span>],</span><br><span class="line">                  plugins:[</span><br><span class="line">                     [<span class="string">'@babel/plugin-proposal-decorators'</span>,&#123;<span class="string">'legacy'</span>:<span class="literal">true</span>&#125;],</span><br><span class="line">                     [<span class="string">'@babel/plugin-proposal-class-properties'</span>,&#123;<span class="string">'loose'</span>:<span class="literal">true</span>&#125;],</span><br><span class="line">                     <span class="string">'@babel/plugin-transform-runtime'</span></span><br><span class="line">                  ]</span><br><span class="line">              &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            include:path.resolve(__dirname,<span class="string">'src'</span>),//包含</span><br><span class="line">            exclude:/node_modules/ //不包含</span><br><span class="line">          &#125;</span><br><span class="line">      ]</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h2 id="3-8-处理图片、字体与媒体文件"><a href="#3-8-处理图片、字体与媒体文件" class="headerlink" title="3.8 处理图片、字体与媒体文件"></a>3.8 处理图片、字体与媒体文件</h2><h4 id="npm-install-url-loader"><a href="#npm-install-url-loader" class="headerlink" title="npm install url-loader"></a><code>npm install url-loader</code></h4><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">   module:&#123;</span><br><span class="line">      rules:[</span><br><span class="line">         &#123;</span><br><span class="line">            <span class="built_in">test</span>:/\.(jpg|png|gif|svg|jpeg|eot|ttf|woff|woff2)$/,</span><br><span class="line">            use:&#123;</span><br><span class="line">              loader:<span class="string">'url-loader'</span>,</span><br><span class="line">              options:&#123;</span><br><span class="line">                 <span class="built_in">limit</span>:1000,//图片小于这个值转换成base64</span><br><span class="line">                  name:<span class="string">'imgs/[name].[ext]'</span></span><br><span class="line">              &#125;</span><br><span class="line">            &#125;</span><br><span class="line">         &#125;,</span><br><span class="line">         &#123;</span><br><span class="line">            <span class="built_in">test</span>: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,</span><br><span class="line">            use:&#123;</span><br><span class="line">             	loader:<span class="string">'url-loader'</span>,</span><br><span class="line">                options:&#123;</span><br><span class="line">                  name:<span class="string">'audios/[name].[ext]'</span>,</span><br><span class="line">                  <span class="built_in">limit</span>:10</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">         &#125;</span><br><span class="line">      ]</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h2 id="3-9-处理html中的img图"><a href="#3-9-处理html中的img图" class="headerlink" title="3.9 处理html中的img图"></a>3.9 处理html中的img图</h2><h4 id="npm-install-html-withimg-loader-D"><a href="#npm-install-html-withimg-loader-D" class="headerlink" title="npm install html-withimg-loader -D"></a><code>npm install html-withimg-loader -D</code></h4><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//webpack.config.js</span><br><span class="line">module.exports = &#123;</span><br><span class="line">    module:&#123;</span><br><span class="line">       rules:[</span><br><span class="line">           &#123;</span><br><span class="line">             <span class="built_in">test</span>:/\.html$/,</span><br><span class="line">             use:<span class="string">'html-withimg-loader'</span></span><br><span class="line">           &#125;</span><br><span class="line">       ]</span><br><span class="line">     &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></div>
+<h2 id="3-10-配置优化项"><a href="#3-10-配置优化项" class="headerlink" title="3.10 配置优化项"></a>3.10 配置优化项</h2><h4 id="npm-install-optimize-css-assets-webpack-plugin-uglifyjs-webpack-plugin-D"><a href="#npm-install-optimize-css-assets-webpack-plugin-uglifyjs-webpack-plugin-D" class="headerlink" title="npm install optimize-css-assets-webpack-plugin  uglifyjs-webpack-plugin -D"></a><code>npm install optimize-css-assets-webpack-plugin  uglifyjs-webpack-plugin -D</code></h4><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//webpack.config.js</span><br><span class="line"><span class="built_in">let</span> Ocawp = require(<span class="string">'optimize-css-assets-webpack-plugin'</span>)</span><br><span class="line"><span class="built_in">let</span> Uwp = require(<span class="string">'uglifyjs-webpack-plugin'</span>)</span><br><span class="line">module.exports = &#123;</span><br><span class="line">    optimization:&#123;</span><br><span class="line">       minimizer:[</span><br><span class="line">          new Uwp(&#123;</span><br><span class="line">             cache: <span class="literal">true</span>, //缓存 </span><br><span class="line">             parallel: <span class="literal">true</span>, //是否并发打包</span><br><span class="line">             sourceMap: <span class="literal">true</span> // <span class="built_in">set</span> to <span class="literal">true</span> <span class="keyword">if</span> you want JS <span class="built_in">source</span> maps</span><br><span class="line">          &#125;),</span><br><span class="line">          new Ocawp(&#123;&#125;)</span><br><span class="line">       ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 <h3 id="以上是webpack简单的基础配置"><a href="#以上是webpack简单的基础配置" class="headerlink" title="以上是webpack简单的基础配置"></a>以上是webpack简单的基础配置</h3>
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
   </div>
-  <!--评论块-->
+  
     
-
-</article>
-<nav class="post-nav">
-  <!-- Prev Nav -->
+<nav id="article-nav">
+  <div class="article-nav-block">
     
-  <a href="/2019/02/21/git/" id="post_nav-newer" class="post-nav-content prev-content">
-      新篇
-  </a>
+      <a href="/2019/02/21/git/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            git
+          
+        </div>
+      </a>
     
-
-
-  <!-- Next Nav -->
+  </div>
+  <div class="article-nav-block">
     
-  <a href="/2018/02/20/jwt/" id="post_nav-older" class="post-nav-content next-content">
-      旧篇
-  </a>
+      <a href="/2018/02/20/jwt/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">node中最简单的jwt demo</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
     
+  </div>
 </nav>
-<div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
-<div class="post-toc-none"><p>(无)</p></div>
-<div class="post-toc-box">
-    <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#webpack的配置"><span class="post-toc-number">1.</span> <span class="post-toc-text">webpack的配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-創建一個名為webpack的文件夾"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1. 創建一個名為webpack的文件夾</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#npm-init-y-初始化文件夾-自動生成package-json文件"><span class="post-toc-number">1.1.0.1.</span> <span class="post-toc-text">npm init -y     初始化文件夾  自動生成package.json文件</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-下載webpack-以及-webpack-cli"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2. 下載webpack 以及 webpack-cli</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#npm-install-webpack-webpack-cli-D-這裡-D下载到开发依赖项中"><span class="post-toc-number">1.2.0.1.</span> <span class="post-toc-text">npm install webpack webpack-cli -D  這裡-D下载到开发依赖项中</span></a></li></ol></li></ol><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-在webpack文件夾下創建如下目錄"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">3. 在webpack文件夾下創建如下目錄</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-1-在webpack-config-js中配置webpack打包的入口和出口"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">3.1 在webpack.config.js中配置webpack打包的入口和出口</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-2-配置脚本命令"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">3.2 配置脚本命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#npm-install-webpack-dev-server-D"><span class="post-toc-number">1.5.0.1.</span> <span class="post-toc-text">npm install webpack-dev-server -D</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-3-生成创建html入口文件"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">3.3 生成创建html入口文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#npm-install-html-webpack-plugin-D"><span class="post-toc-number">1.6.0.1.</span> <span class="post-toc-text">npm install html-webpack-plugin -D</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-3-配置webpack开发服务"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">3.3 配置webpack开发服务</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-4-生成创建html入口文件"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">3.4 生成创建html入口文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#npm-install-html-webpack-plugin-D-1"><span class="post-toc-number">1.8.0.1.</span> <span class="post-toc-text">npm install html-webpack-plugin -D</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-5-编译css文件"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">3.5 编译css文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#npm-install-style-loader-css-loader-postcss-loader-autoprefixer-D"><span class="post-toc-number">1.9.0.1.</span> <span class="post-toc-text">npm install style-loader css-loader postcss-loader autoprefixer -D</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#npm-install-less-loader-D"><span class="post-toc-number">1.9.0.2.</span> <span class="post-toc-text">npm install less-loader -D</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-6-提取打包css"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">3.6 提取打包css</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#npm-install-mini-css-extract-plugin-D-此插件为webpack4-x插件"><span class="post-toc-number">1.10.0.1.</span> <span class="post-toc-text">npm install mini-css-extract-plugin -D  此插件为webpack4.x插件</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-7-处理js"><span class="post-toc-number">1.11.</span> <span class="post-toc-text">3.7 处理js</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#npm-install-babel-core-babel-preset-env-babel-core-babel-babel-preset-env"><span class="post-toc-number">1.11.0.1.</span> <span class="post-toc-text">npm install @babel/core @babel/preset-env @babel/core babel @babel-preset-env</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#npm-install-babel-loader"><span class="post-toc-number">1.11.0.2.</span> <span class="post-toc-text">npm install babel-loader</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-8-处理图片、字体与媒体文件"><span class="post-toc-number">1.12.</span> <span class="post-toc-text">3.8 处理图片、字体与媒体文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#npm-install-url-loader"><span class="post-toc-number">1.12.0.1.</span> <span class="post-toc-text">npm install url-loader</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-9-处理html中的img图"><span class="post-toc-number">1.13.</span> <span class="post-toc-text">3.9 处理html中的img图</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#npm-install-html-withimg-loader-D"><span class="post-toc-number">1.13.0.1.</span> <span class="post-toc-text">npm install html-withimg-loader -D</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-10-配置优化项"><span class="post-toc-number">1.14.</span> <span class="post-toc-text">3.10 配置优化项</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#npm-install-optimize-css-assets-webpack-plugin-uglifyjs-webpack-plugin-D"><span class="post-toc-number">1.14.0.1.</span> <span class="post-toc-text">npm install optimize-css-assets-webpack-plugin  uglifyjs-webpack-plugin -D</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#以上是webpack简单的基础配置"><span class="post-toc-number">1.14.1.</span> <span class="post-toc-text">以上是webpack简单的基础配置</span></a></li>
-</div>
-<!--<div class="post-back"><i class="material-icons">arrow_back</i></div>-->
-<script type="text/javascript">
-    menu();
-</script>
-  </div>
-</div>
-<div id="bottom-outer">
-  <div id="bottom-inner">
-    <a id="top-button" onfocus="this.blur();"><div class="up upinbody" style="background-color:#26A69A"><i class="material-icons material-up">vertical_align_top</i></div></a>
 
-
-<p style="line-height: 45px">Copyright ©  2017  Hu Junming</p>
-<p style="line-height: 45px">Powered by <a href="https://hexo.io/" target="_blank"> Hexo </a> && Theme - <a href="https://github.com/moumao/hexo-theme-Vateral" target="_blank">Vateral</a></p>
-
-  </div>
-</div>
-
-<!--影集界面需要的资源-->
-
-
-
-<!-- scripts list from theme config.yml -->
-
-<script src="/js/jquery-3.1.1.min.js"></script>
-
-<script src="/js/materialize.min.js"></script>
-
-<script src="/js/main.min.js"></script>
-
-
+    
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
+<script src="https://jjeejj.github.io/js/gitment.js"></script>
 <script>
-    NProgress.start();
-    NProgress.done();
-    lazy();
-    links();
-    window.onpopstate = menu();
-    //pjax操作
-    $(document).pjax('a:not(.nopjax)', '#content-inner', {fragment:'#content-inner', timeout:8000});
-    $(document).on('pjax:start', NProgress.start).on('pjax:end', NProgress.done)
-        .on('pjax:end', () => {
-            dowmdiv();
-            lazy();
-            toc();
-            links();
-            menu();
-        });
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '10d6a03a093f11012fbc',
+    client_secret: '3904764d837d6ee9c88bb36265704d8ac182d4cb',
+  },
+})
+gitment.render('gitmentContainer')
 </script>
 
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/psb.webp" title="图片来自网络">
+    <h3 class="avatar-name">
+      
+        Hu Junming
+      
+    </h3>
+    <p class="avatar-slogan">
+      人最大的劣根性，就是雙眼都用來盯著別人和外邊的世界，難以自檢。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2111/11/">November 2111</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2111/11/11/about/">Beginning</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/27/mianshi/">mianshi</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/21/git/">git</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/19/webpack/">webpack</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/20/jwt/">node中最简单的jwt demo</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2019 Hu Junming &nbsp;&nbsp;
+    by <a href="http://hexo.io/" target="_blank">myself</a>
+    <a href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">总浏览量:<span id="busuanzi_value_site_pv"></span></span>
+  </div>
+</footer>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
 </body>
 </html>

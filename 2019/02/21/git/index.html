@@ -1,135 +1,90 @@
 <!DOCTYPE html>
-<html lang>
+<html>
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
   
-  <meta name="keywords" content="网站关键字">
-  <meta name="description" content="网站简介">
+
   
-  <title>Hu Junming</title>
+  <title>git | Hu Junming</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-    <!-- stylesheets list from config.yml -->
-    
-      <link rel="stylesheet" href="/css/materialize.min.css">
-    
-      <link rel="stylesheet" href="/css/main.min.css">
-    
   
-  <style type="text/css">
-      html{
-          font-family: sans-serif;
-          font-weight: 300;
-      }
-      @font-face {
-          font-family: 'Material Icons';
-          font-style: normal;
-          font-weight: 400;
-          src: url(/fonts/MaterialIcons-Regular.eot);
-          src: url(/fonts/MaterialIcons-Regular.woff2) format('woff2'),
-          url(/fonts/MaterialIcons-Regular.woff) format('woff'),
-          url(/fonts/MaterialIcons-Regular.ttf) format('truetype')
-      }
-  </style>
-<link rel="shortcut icon" href="/source/favicon.ico">
+  
+  <meta name="description" content="本篇文章根据自己本身实际对git的操作以及经验做出简单的归纳总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git">
+<meta property="og:url" content="http://yoursite.com/2019/02/21/git/index.html">
+<meta property="og:site_name" content="Hu Junming">
+<meta property="og:description" content="本篇文章根据自己本身实际对git的操作以及经验做出简单的归纳总结">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://www.edunvpei.com/tu/0.jpg">
+<meta property="og:updated_time" content="2019-02-21T11:54:04.785Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git">
+<meta name="twitter:description" content="本篇文章根据自己本身实际对git的操作以及经验做出简单的归纳总结">
+<meta name="twitter:image" content="https://www.edunvpei.com/tu/0.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hu Junming" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/Cloud_Snow_Moon_128px_1179853_easyicon.net.ico">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
 </head>
+</html>
 <body>
-<div id="menu-box"><a href="javascript:void(0)" id="menu" data-activates="slide-out" class="button-collapse menu"><span class="nav-btn"></span></a></div>
-<div id="menu-outer">
-  <div id="menu-inner">
-      <ul id="slide-out" class="side-nav">
-    <div class="nav-header" style="background-image: url(/images/header-bg.png);background-color:#26A69A">
-    <div class="header-box"><img src="/images/header.png" ondragstart="return false;"></div>
-    <p>Hu Junming</p>
-    <div class="nav-link">
-        
-        <a href="http://example.com" target="_blank"> <div class="link-box twitter"></div></a>
-        
-        
-        <a href="http://example.com" target="_blank"><div class="link-box github"></div></a>
-        
-        
-        <a href="mailto:http://example.com"><div class="link-box email"></div></a>
-        
-        
-        <a href="http://example.com" target="_blank"><div class="link-box weibo"></div></a>
-        
-        
-        <a href="http://example.com" target="_blank"> <div class="link-box zhihu"></div></a>
-        
-    </div>
-    <div class="nav-search">
-        <form id="search-form"> <!-- 搜索框相关 -->
-            <input type="text" id="local-search-input" name="q" results="0" placeholder="搜索..." class="search form-control" autocomplete="off" autocorrect="off">
-            <div class="nav-search-img"><i class="material-icons">search</i></div>
-        </form>
-        <div id="local-search-result"></div> <!-- 搜索结果区 -->
-        <p class="no-result">无搜索结果</p>
-    </div>
-</div>
-    <!--Homepage-->
-
-<li class="nav-list">
-    <a href="/" target="_self">
-        <div class="nav-ico"><i class="material-icons">home</i> </div><p>主页</p>
-    </a>
-</li>
-
-<!--archives-->
-
-<li class="nav-list dropdown-btn">
-    <a class target="_self">
-        <div class="nav-ico"><i class="material-icons">assignment</i></div><p>归档</p><div class="dropdown-ico"><i class="material-icons">arrow_drop_down</i></div>
-    </a>
-</li>
-
-<ul class="dropdown-menu dropdown">
-    <li class="nav-dropdown-list">
-        <a class="archive-link" href="/archives/2111/11/">November 2111<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2019/02/">February 2019<span class="archive-count">3</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2018/02/">February 2018<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/05/">May 2017<span class="archive-count">1</span></a>
-    </li>
-</ul>
-<!--categories-->
-
-<ul class="dropdown-menu dropdown">
-    <li class="nav-dropdown-list">
-        
-    </li>
-</ul>
-<!--tags-->
-
-<li class="nav-list">
-    <a href="/archives" target="_self">
-        <div class="nav-ico"><i class="material-icons">bookmark</i> </div><p>标签</p>
-    </a>
-</li>
-
-<!--photo-->
-
-<!--friends-->
-
-<!--about-->
-
-
-</ul>
-
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title>首页</a>
+      
+        <a class="nav-item" href="/archives" title>归档</a>
+      
+    </nav>
   </div>
-</div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-git" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      git
+    </h1>
+  
 
-<div id="content-outer">
-  <div id="content-inner">
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/02/21/git/" class="article-date">
+  <time datetime="2019-02-21T03:06:13.000Z" itemprop="datePublished">2019-02-21</time>
+</a>
     
-<article id="post">
-  <div class="post-page-title" style="background-color:#26A69A;background-image:url(/images/random/vateral-13.png)">
-  <h2>git</h2>
-    
-  <p>作者:Hu Junming &nbsp&nbsp 发布于:<time datetime="2019-02-21T03:06:13.000Z">
-          2019-02-21
-    </time>
-  </p>
     
   </div>
-  <div class="post-page-content">
-  <p>本篇文章根据自己本身实际对git的操作以及经验做出简单的归纳总结</p>
+  
+    <span id="busuanzi_container_page_pv">
+      阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-doorframe" itemprop="articleBody">
+      
+        <p>本篇文章根据自己本身实际对git的操作以及经验做出简单的归纳总结</p>
 <a id="more"></a>
 <h2 id="简述git流程及操作"><a href="#简述git流程及操作" class="headerlink" title="简述git流程及操作"></a>简述git流程及操作</h2><h3 id="1-创建本地仓库"><a href="#1-创建本地仓库" class="headerlink" title="1. 创建本地仓库"></a>1. 创建本地仓库</h3><h4 id="1-创建Warehouse文件夹-cd进文件夹输入-git-init-初始化仓库"><a href="#1-创建Warehouse文件夹-cd进文件夹输入-git-init-初始化仓库" class="headerlink" title="(1) 创建Warehouse文件夹,cd进文件夹输入   git init  初始化仓库"></a>(1) 创建Warehouse文件夹,cd进文件夹输入   git init  初始化仓库</h4><h4 id="2-在Warehouse文件夹中创建a-txt并且写入内容"><a href="#2-在Warehouse文件夹中创建a-txt并且写入内容" class="headerlink" title="(2) 在Warehouse文件夹中创建a.txt并且写入内容"></a>(2) 在Warehouse文件夹中创建a.txt并且写入内容</h4><h4 id="3-终端输入git-add-a-txt-命令将工作区中修改的内容提交到暂存区"><a href="#3-终端输入git-add-a-txt-命令将工作区中修改的内容提交到暂存区" class="headerlink" title="(3) 终端输入git add a.txt 命令将工作区中修改的内容提交到暂存区"></a>(3) 终端输入git add a.txt 命令将工作区中修改的内容提交到暂存区</h4><h4 id="4-继上一步后输入git-commit-m-“附加说明”-命令将暂存区中所有内容提交到仓库-当前分支"><a href="#4-继上一步后输入git-commit-m-“附加说明”-命令将暂存区中所有内容提交到仓库-当前分支" class="headerlink" title="(4) 继上一步后输入git commit -m “附加说明” 命令将暂存区中所有内容提交到仓库(当前分支)"></a>(4) 继上一步后输入git commit -m “附加说明” 命令将暂存区中所有内容提交到仓库(当前分支)</h4><h4 id="5-我们可以在所有阶段使用git-status查看仓库当前状态"><a href="#5-我们可以在所有阶段使用git-status查看仓库当前状态" class="headerlink" title="(5) 我们可以在所有阶段使用git status查看仓库当前状态"></a>(5) 我们可以在所有阶段使用git status查看仓库当前状态</h4><h4 id="6-当我们修改过a-txt却忘了修改的什么内容-可以用git-diff命令查看"><a href="#6-当我们修改过a-txt却忘了修改的什么内容-可以用git-diff命令查看" class="headerlink" title="(6) 当我们修改过a.txt却忘了修改的什么内容  可以用git diff命令查看"></a>(6) 当我们修改过a.txt却忘了修改的什么内容  可以用git diff命令查看</h4><h4 id="7-提交过很多次内容后可以使用-git-log命令看到我们的提交日志"><a href="#7-提交过很多次内容后可以使用-git-log命令看到我们的提交日志" class="headerlink" title="(7) 提交过很多次内容后可以使用 git log命令看到我们的提交日志"></a>(7) 提交过很多次内容后可以使用 git log命令看到我们的提交日志</h4><h4 id="8-当我们想回到上一个版本-git-reset-–hard-head-head-回退两个版本-head-100-回退指定版本"><a href="#8-当我们想回到上一个版本-git-reset-–hard-head-head-回退两个版本-head-100-回退指定版本" class="headerlink" title="(8) 当我们想回到上一个版本 git reset –hard head^  head^^(回退两个版本)  head~100(回退指定版本)"></a>(8) 当我们想回到上一个版本 git reset –hard head^  head^^(回退两个版本)  head~100(回退指定版本)</h4><h4 id="10-使用git-checkout-–-a-txt-可以撤回在工作区的最后一次操作"><a href="#10-使用git-checkout-–-a-txt-可以撤回在工作区的最后一次操作" class="headerlink" title="(10) 使用git checkout – a.txt 可以撤回在工作区的最后一次操作"></a>(10) 使用git checkout – a.txt 可以撤回在工作区的最后一次操作</h4><h4 id="11-如果我们想要删掉某个文件可以使用-git-rm-–a-txt"><a href="#11-如果我们想要删掉某个文件可以使用-git-rm-–a-txt" class="headerlink" title="(11) 如果我们想要删掉某个文件可以使用 git rm –a.txt"></a>(11) 如果我们想要删掉某个文件可以使用 git rm –a.txt</h4><h4 id="12-如果错删了或者改错了只要版本库中还存在就可以用-git-checkout-–-a-txt一键还原"><a href="#12-如果错删了或者改错了只要版本库中还存在就可以用-git-checkout-–-a-txt一键还原" class="headerlink" title="(12) 如果错删了或者改错了只要版本库中还存在就可以用 git checkout – a.txt一键还原"></a>(12) 如果错删了或者改错了只要版本库中还存在就可以用 git checkout – a.txt一键还原</h4><h4 id="以下是在廖雪峰老师网站看到的一张图-简单易懂"><a href="#以下是在廖雪峰老师网站看到的一张图-简单易懂" class="headerlink" title="以下是在廖雪峰老师网站看到的一张图 简单易懂"></a>以下是在廖雪峰老师网站看到的一张图 简单易懂</h4><p><img src="https://www.edunvpei.com/tu/0.jpg" alt="此图来自其他网站"></p>
 <h3 id="2-远程仓库"><a href="#2-远程仓库" class="headerlink" title="2.远程仓库"></a>2.远程仓库</h3><h4 id="这里我们介绍使用SSH协议的远程仓库"><a href="#这里我们介绍使用SSH协议的远程仓库" class="headerlink" title="这里我们介绍使用SSH协议的远程仓库"></a>这里我们介绍使用SSH协议的远程仓库</h4><h4 id="1-创建SSH-Key"><a href="#1-创建SSH-Key" class="headerlink" title="(1)创建SSH Key"></a>(1)创建SSH Key</h4><p>   终端输入 ssh-keygen -t rsa -C “youremail”生成密钥       C:\Users\Administrator.ssh 在此路径下<br> <code>$   ssh-keygen -t rsa -C &quot;youremail&quot;</code></p>
@@ -146,79 +101,159 @@
 <h3 id="4-多人协作"><a href="#4-多人协作" class="headerlink" title="4. 多人协作"></a>4. 多人协作</h3><h4 id="1-将合作者的公钥添加到个人的账户中"><a href="#1-将合作者的公钥添加到个人的账户中" class="headerlink" title="(1)将合作者的公钥添加到个人的账户中"></a>(1)将合作者的公钥添加到个人的账户中</h4><h4 id="2-在github中添加成员"><a href="#2-在github中添加成员" class="headerlink" title="(2)在github中添加成员"></a>(2)在github中添加成员</h4><p>登录github：找到你的仓库 -&gt; Settings -&gt; Collaborators -&gt; Add Collaborator</p>
 <h4 id="3-合作者拉取远程仓库中的项目"><a href="#3-合作者拉取远程仓库中的项目" class="headerlink" title="(3)合作者拉取远程仓库中的项目"></a>(3)合作者拉取远程仓库中的项目</h4><h4 id="4-项目成员在本地创建dev分支-在dev分支的基础上分别创建更多分支进行项目的开发"><a href="#4-项目成员在本地创建dev分支-在dev分支的基础上分别创建更多分支进行项目的开发" class="headerlink" title="(4)项目成员在本地创建dev分支 在dev分支的基础上分别创建更多分支进行项目的开发"></a>(4)项目成员在本地创建dev分支 在dev分支的基础上分别创建更多分支进行项目的开发</h4><h4 id="5-合并分支-可以时不时的进行分支合并"><a href="#5-合并分支-可以时不时的进行分支合并" class="headerlink" title="(5)合并分支(可以时不时的进行分支合并)"></a>(5)合并分支(可以时不时的进行分支合并)</h4><p>以上也有一些命令没有说到 请遇到相应的情况自行搜索</p>
 
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
   </div>
-  <!--评论块-->
+  
     
-
-</article>
-<nav class="post-nav">
-  <!-- Prev Nav -->
+<nav id="article-nav">
+  <div class="article-nav-block">
     
-  <a href="/2019/02/27/mianshi/" id="post_nav-newer" class="post-nav-content prev-content">
-      新篇
-  </a>
+      <a href="/2019/02/27/mianshi/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            mianshi
+          
+        </div>
+      </a>
     
-
-
-  <!-- Next Nav -->
+  </div>
+  <div class="article-nav-block">
     
-  <a href="/2019/02/19/webpack/" id="post_nav-older" class="post-nav-content next-content">
-      旧篇
-  </a>
+      <a href="/2019/02/19/webpack/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">webpack</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
     
+  </div>
 </nav>
-<div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
-<div class="post-toc-none"><p>(无)</p></div>
-<div class="post-toc-box">
-    <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简述git流程及操作"><span class="post-toc-number">1.</span> <span class="post-toc-text">简述git流程及操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-创建本地仓库"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1. 创建本地仓库</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-创建Warehouse文件夹-cd进文件夹输入-git-init-初始化仓库"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">(1) 创建Warehouse文件夹,cd进文件夹输入   git init  初始化仓库</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-在Warehouse文件夹中创建a-txt并且写入内容"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">(2) 在Warehouse文件夹中创建a.txt并且写入内容</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-终端输入git-add-a-txt-命令将工作区中修改的内容提交到暂存区"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">(3) 终端输入git add a.txt 命令将工作区中修改的内容提交到暂存区</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-继上一步后输入git-commit-m-“附加说明”-命令将暂存区中所有内容提交到仓库-当前分支"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">(4) 继上一步后输入git commit -m “附加说明” 命令将暂存区中所有内容提交到仓库(当前分支)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5-我们可以在所有阶段使用git-status查看仓库当前状态"><span class="post-toc-number">1.1.5.</span> <span class="post-toc-text">(5) 我们可以在所有阶段使用git status查看仓库当前状态</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#6-当我们修改过a-txt却忘了修改的什么内容-可以用git-diff命令查看"><span class="post-toc-number">1.1.6.</span> <span class="post-toc-text">(6) 当我们修改过a.txt却忘了修改的什么内容  可以用git diff命令查看</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#7-提交过很多次内容后可以使用-git-log命令看到我们的提交日志"><span class="post-toc-number">1.1.7.</span> <span class="post-toc-text">(7) 提交过很多次内容后可以使用 git log命令看到我们的提交日志</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#8-当我们想回到上一个版本-git-reset-–hard-head-head-回退两个版本-head-100-回退指定版本"><span class="post-toc-number">1.1.8.</span> <span class="post-toc-text">(8) 当我们想回到上一个版本 git reset –hard head^  head^^(回退两个版本)  head~100(回退指定版本)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#10-使用git-checkout-–-a-txt-可以撤回在工作区的最后一次操作"><span class="post-toc-number">1.1.9.</span> <span class="post-toc-text">(10) 使用git checkout – a.txt 可以撤回在工作区的最后一次操作</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#11-如果我们想要删掉某个文件可以使用-git-rm-–a-txt"><span class="post-toc-number">1.1.10.</span> <span class="post-toc-text">(11) 如果我们想要删掉某个文件可以使用 git rm –a.txt</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#12-如果错删了或者改错了只要版本库中还存在就可以用-git-checkout-–-a-txt一键还原"><span class="post-toc-number">1.1.11.</span> <span class="post-toc-text">(12) 如果错删了或者改错了只要版本库中还存在就可以用 git checkout – a.txt一键还原</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#以下是在廖雪峰老师网站看到的一张图-简单易懂"><span class="post-toc-number">1.1.12.</span> <span class="post-toc-text">以下是在廖雪峰老师网站看到的一张图 简单易懂</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-远程仓库"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2.远程仓库</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#这里我们介绍使用SSH协议的远程仓库"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">这里我们介绍使用SSH协议的远程仓库</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-创建SSH-Key"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">(1)创建SSH Key</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-New-SSH-Key"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">(2)New SSH Key</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-在github创建仓库"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">(3)在github创建仓库</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-关联本地仓库与远程仓库"><span class="post-toc-number">1.2.5.</span> <span class="post-toc-text">(4)关联本地仓库与远程仓库</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5-将本地库的内容推送的远程库"><span class="post-toc-number">1.2.6.</span> <span class="post-toc-text">(5)将本地库的内容推送的远程库</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#6-之后提交可以使用-git-push-origin-master"><span class="post-toc-number">1.2.7.</span> <span class="post-toc-text">(6)之后提交可以使用 git push origin master</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#7-从远程库拉取内容到本地库"><span class="post-toc-number">1.2.8.</span> <span class="post-toc-text">(7)从远程库拉取内容到本地库</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-分支"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">3.分支</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-创建分支"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">(1)创建分支</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-查看分支"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">(2)查看分支</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-切换分支"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">(3)切换分支</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-合并分支"><span class="post-toc-number">1.3.4.</span> <span class="post-toc-text">(4)合并分支</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5-删除分支"><span class="post-toc-number">1.3.5.</span> <span class="post-toc-text">(5)删除分支</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-多人协作"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">4. 多人协作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-将合作者的公钥添加到个人的账户中"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">(1)将合作者的公钥添加到个人的账户中</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-在github中添加成员"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">(2)在github中添加成员</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-合作者拉取远程仓库中的项目"><span class="post-toc-number">1.4.3.</span> <span class="post-toc-text">(3)合作者拉取远程仓库中的项目</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-项目成员在本地创建dev分支-在dev分支的基础上分别创建更多分支进行项目的开发"><span class="post-toc-number">1.4.4.</span> <span class="post-toc-text">(4)项目成员在本地创建dev分支 在dev分支的基础上分别创建更多分支进行项目的开发</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5-合并分支-可以时不时的进行分支合并"><span class="post-toc-number">1.4.5.</span> <span class="post-toc-text">(5)合并分支(可以时不时的进行分支合并)</span></a></li></ol></li></ol></li></ol>
-</div>
-<!--<div class="post-back"><i class="material-icons">arrow_back</i></div>-->
-<script type="text/javascript">
-    menu();
-</script>
-  </div>
-</div>
-<div id="bottom-outer">
-  <div id="bottom-inner">
-    <a id="top-button" onfocus="this.blur();"><div class="up upinbody" style="background-color:#26A69A"><i class="material-icons material-up">vertical_align_top</i></div></a>
 
-
-<p style="line-height: 45px">Copyright ©  2017  Hu Junming</p>
-<p style="line-height: 45px">Powered by <a href="https://hexo.io/" target="_blank"> Hexo </a> && Theme - <a href="https://github.com/moumao/hexo-theme-Vateral" target="_blank">Vateral</a></p>
-
-  </div>
-</div>
-
-<!--影集界面需要的资源-->
-
-
-
-<!-- scripts list from theme config.yml -->
-
-<script src="/js/jquery-3.1.1.min.js"></script>
-
-<script src="/js/materialize.min.js"></script>
-
-<script src="/js/main.min.js"></script>
-
-
+    
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
+<script src="https://jjeejj.github.io/js/gitment.js"></script>
 <script>
-    NProgress.start();
-    NProgress.done();
-    lazy();
-    links();
-    window.onpopstate = menu();
-    //pjax操作
-    $(document).pjax('a:not(.nopjax)', '#content-inner', {fragment:'#content-inner', timeout:8000});
-    $(document).on('pjax:start', NProgress.start).on('pjax:end', NProgress.done)
-        .on('pjax:end', () => {
-            dowmdiv();
-            lazy();
-            toc();
-            links();
-            menu();
-        });
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '10d6a03a093f11012fbc',
+    client_secret: '3904764d837d6ee9c88bb36265704d8ac182d4cb',
+  },
+})
+gitment.render('gitmentContainer')
 </script>
 
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/psb.webp" title="图片来自网络">
+    <h3 class="avatar-name">
+      
+        Hu Junming
+      
+    </h3>
+    <p class="avatar-slogan">
+      人最大的劣根性，就是雙眼都用來盯著別人和外邊的世界，難以自檢。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2111/11/">November 2111</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2111/11/11/about/">Beginning</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/27/mianshi/">mianshi</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/21/git/">git</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/19/webpack/">webpack</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/20/jwt/">node中最简单的jwt demo</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2019 Hu Junming &nbsp;&nbsp;
+    by <a href="http://hexo.io/" target="_blank">myself</a>
+    <a href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">总浏览量:<span id="busuanzi_value_site_pv"></span></span>
+  </div>
+</footer>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
 </body>
 </html>
