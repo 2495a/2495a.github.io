@@ -10,14 +10,17 @@
   
   
   
-  <meta property="og:type" content="article">
+  <meta name="description" content="构造函数、实例对象、原型对象">
+<meta property="og:type" content="article">
 <meta property="og:title" content="prototype">
 <meta property="og:url" content="http://yoursite.com/2019/03/18/prototype/index.html">
 <meta property="og:site_name" content="Hu Junming">
+<meta property="og:description" content="构造函数、实例对象、原型对象">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-18T07:07:29.397Z">
+<meta property="og:updated_time" content="2019-03-20T01:07:34.159Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="prototype">
+<meta name="twitter:description" content="构造函数、实例对象、原型对象">
   
     <link rel="alternate" href="/atom.xml" title="Hu Junming" type="application/atom+xml">
   
@@ -85,7 +88,8 @@
     
     <div class="article-content article-content-doorframe" itemprop="articleBody">
       
-        
+        <h2 id="构造函数、实例对象、原型对象"><a href="#构造函数、实例对象、原型对象" class="headerlink" title="构造函数、实例对象、原型对象"></a>构造函数、实例对象、原型对象</h2><a id="more"></a>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">构造函数、实例对象、原型对象</span><br><span class="line">构造函数没有实例化之前就是普通函数 this指向window</span><br><span class="line">实例化过程中 new 把this指向先变的无指向(破坏this) 然后再复制一份同样的</span><br><span class="line">数据进行赋值给实例化之后的变量</span><br><span class="line">实例对象是通过构造函数实例来的</span><br><span class="line">只要是实例化之后 就一定有原型对象</span><br><span class="line">prototype: 通过当前的原型进行数据的传递 共享数据 实现继承 节省内存空间</span><br><span class="line"><span class="keyword">function</span> Parent(name,age,color)&#123;</span><br><span class="line">    this.name = name</span><br><span class="line">    this.age = age</span><br><span class="line">    this.color = colorm  </span><br><span class="line">&#125;</span><br><span class="line">var  p = new Parent(1,2,3)</span><br><span class="line">console.log(p.constructor === p.__proto__.constructor)</span><br><span class="line">console.log(p.__proto__ === Parent.prototype)</span><br><span class="line">console.log(p.__proto__.constructor === Parent)</span><br><span class="line">console.log(Parent.prototype.constructor === Parent)</span><br><span class="line">console.log(p.__proto__.constructor === Parent.prototype.constructor)</span><br><span class="line">console.log(p.__proto__.__proto__)</span><br><span class="line">console.log(Parent.prototype.__proto__ === Object.prototype)</span><br><span class="line">console.log(Object.prototype)</span><br><span class="line">console.log(p.__proto__.__proto__ === Object.prototype)</span><br></pre></td></tr></table></figure></div>
       
     </div>
     
@@ -99,11 +103,11 @@
 <nav id="article-nav">
   <div class="article-nav-block">
     
-      <a href="/2111/11/11/about/" id="article-nav-newer" class="article-nav-link-wrap">
+      <a href="/2019/03/20/vue-swiper/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption"></strong>
         <div class="article-nav-title">
           
-            Beginning
+            vue-swiper
           
         </div>
       </a>
@@ -161,7 +165,7 @@ gitment.render('gitmentContainer')
   <div class="widget-box">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/es6/">es6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/es6/">es6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li></ul>
     </div>
   </div>
 
@@ -192,19 +196,19 @@ gitment.render('gitmentContainer')
           </li>
         
           <li>
-            <a href="/2019/03/18/prototype/">prototype</a>
+            <a href="/2019/03/21/vue国际化/">vue国际化</a>
           </li>
         
           <li>
-            <a href="/2019/03/18/slice/">slice</a>
+            <a href="/2019/03/20/css-rem/">css-rem</a>
           </li>
         
           <li>
-            <a href="/2019/02/27/mianshi/">mianshi</a>
+            <a href="/2019/03/20/css-display-visibility/">css-display/visibility</a>
           </li>
         
           <li>
-            <a href="/2019/02/21/git/">git</a>
+            <a href="/2019/03/20/vue-swiper/">vue-swiper</a>
           </li>
         
       </ul>

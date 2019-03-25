@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="Hu Junming">
 <meta property="og:description" content="webpack的配置">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-18T00:40:24.273Z">
+<meta property="og:updated_time" content="2019-03-23T02:09:25.881Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack">
 <meta name="twitter:description" content="webpack的配置">
@@ -89,7 +89,6 @@
     <div class="article-content article-content-doorframe" itemprop="articleBody">
       
         <h1 id="webpack的配置"><a href="#webpack的配置" class="headerlink" title="webpack的配置"></a>webpack的配置</h1><a id="more"></a>
-<p>阅读全文</p>
 <h2 id="1-創建一個名為webpack的文件夾"><a href="#1-創建一個名為webpack的文件夾" class="headerlink" title="1. 創建一個名為webpack的文件夾"></a>1. 創建一個名為webpack的文件夾</h2><h4 id="npm-init-y-初始化文件夾-自動生成package-json文件"><a href="#npm-init-y-初始化文件夾-自動生成package-json文件" class="headerlink" title="npm init -y     初始化文件夾  自動生成package.json文件"></a><code>npm init -y     初始化文件夾  自動生成package.json文件</code></h4><h2 id="2-下載webpack-以及-webpack-cli"><a href="#2-下載webpack-以及-webpack-cli" class="headerlink" title="2. 下載webpack 以及 webpack-cli"></a>2. 下載webpack 以及 webpack-cli</h2><h4 id="npm-install-webpack-webpack-cli-D-這裡-D下载到开发依赖项中"><a href="#npm-install-webpack-webpack-cli-D-這裡-D下载到开发依赖项中" class="headerlink" title="npm install webpack webpack-cli -D  這裡-D下载到开发依赖项中"></a><code>npm install webpack webpack-cli -D  這裡-D下载到开发依赖项中</code></h4><h2 id="3-在webpack文件夾下創建如下目錄"><a href="#3-在webpack文件夾下創建如下目錄" class="headerlink" title="3. 在webpack文件夾下創建如下目錄"></a>3. 在webpack文件夾下創建如下目錄</h2><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">webpack</span><br><span class="line">├── src</span><br><span class="line">├── ├──index.js</span><br><span class="line">├── webpack.config.js</span><br><span class="line">├── package.json</span><br></pre></td></tr></table></figure></div>
 <div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//webpack.config.js</span><br><span class="line">module.exports=&#123;</span><br><span class="line">   entry:&#123;&#125;,//入口</span><br><span class="line">   output:&#123;&#125;//出口</span><br><span class="line">   module:&#123;&#125;,//编译压缩转换html、css、js、图片、媒体等文件</span><br><span class="line">   plugins:[],//添加功能插件</span><br><span class="line">   devServer:&#123;&#125;//配置webpack开发服务</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 <h2 id="3-1-在webpack-config-js中配置webpack打包的入口和出口"><a href="#3-1-在webpack-config-js中配置webpack打包的入口和出口" class="headerlink" title="3.1 在webpack.config.js中配置webpack打包的入口和出口"></a>3.1 在webpack.config.js中配置webpack打包的入口和出口</h2><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> path = require(<span class="string">'path'</span>) //引入node中的path模块 方便之後的路徑配置</span><br><span class="line"></span><br><span class="line">//单入口配置</span><br><span class="line">module.exports = &#123;</span><br><span class="line">   entry:<span class="string">'./src/index.js'</span>, //入口 圍繞index.js文件打包</span><br><span class="line">   output:&#123;</span><br><span class="line">      path:path.resolve(__dirname,<span class="string">'dist'</span>), //打包完成的文件夾名</span><br><span class="line">      filename:<span class="string">'bundle[hash:6].js'</span> //这里只有一个入口 可以指定出口名字 并且可以添加<span class="built_in">hash</span>值</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//多入口配置</span><br><span class="line">module.exports = &#123;</span><br><span class="line">   entry:[<span class="string">'./src/index.js'</span>,<span class="string">'./src/index2.js'</span>], //这里可以写成数组 也可以写成对象</span><br><span class="line">   output:&#123;</span><br><span class="line">      path:path.resolve(__dirname,<span class="string">'dist'</span>),</span><br><span class="line">      filename:<span class="string">'[name].js'</span> //这里name是entry的键值</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">此时可以在js文件中写一些js语句  终端执行npx webpack命令即可打包 //需node版本8.2以上</span><br></pre></td></tr></table></figure></div>
@@ -179,7 +178,7 @@ gitment.render('gitmentContainer')
   <div class="widget-box">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/es6/">es6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/es6/">es6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li></ul>
     </div>
   </div>
 
@@ -210,19 +209,19 @@ gitment.render('gitmentContainer')
           </li>
         
           <li>
-            <a href="/2019/03/18/prototype/">prototype</a>
+            <a href="/2019/03/21/vue国际化/">vue国际化</a>
           </li>
         
           <li>
-            <a href="/2019/03/18/slice/">slice</a>
+            <a href="/2019/03/20/css-rem/">css-rem</a>
           </li>
         
           <li>
-            <a href="/2019/02/27/mianshi/">mianshi</a>
+            <a href="/2019/03/20/css-display-visibility/">css-display/visibility</a>
           </li>
         
           <li>
-            <a href="/2019/02/21/git/">git</a>
+            <a href="/2019/03/20/vue-swiper/">vue-swiper</a>
           </li>
         
       </ul>
