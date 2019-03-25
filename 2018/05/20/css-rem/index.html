@@ -5,22 +5,22 @@
   
 
   
-  <title>css-display/visibility | Hu Junming</title>
+  <title>css-rem | Hu Junming</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
-  <meta name="description" content="关于display:none与visibility:hidden的区别">
+  <meta name="description" content="在项目中使用rem">
 <meta property="og:type" content="article">
-<meta property="og:title" content="css-display&#x2F;visibility">
-<meta property="og:url" content="http://yoursite.com/2019/03/20/css-display-visibility/index.html">
+<meta property="og:title" content="css-rem">
+<meta property="og:url" content="http://yoursite.com/2018/05/20/css-rem/index.html">
 <meta property="og:site_name" content="Hu Junming">
-<meta property="og:description" content="关于display:none与visibility:hidden的区别">
+<meta property="og:description" content="在项目中使用rem">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-25T05:48:57.047Z">
+<meta property="og:updated_time" content="2019-03-25T12:08:16.599Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="css-display&#x2F;visibility">
-<meta name="twitter:description" content="关于display:none与visibility:hidden的区别">
+<meta name="twitter:title" content="css-rem">
+<meta name="twitter:description" content="在项目中使用rem">
   
     <link rel="alternate" href="/atom.xml" title="Hu Junming" type="application/atom+xml">
   
@@ -55,21 +55,21 @@
   </div>
 </header>
       <div id="middlecontent" title class="global-width sidebar-right">
-        <section id="main"><article id="post-css-display-visibility" class="article global-container article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-css-rem" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
       
   
     <h1 class="article-title" itemprop="name">
-      css-display/visibility
+      css-rem
     </h1>
   
 
     </header>
   
   <div class="article-meta">
-    <a href="/2019/03/20/css-display-visibility/" class="article-date">
-  <time datetime="2019-03-20T06:52:05.000Z" itemprop="datePublished">2019-03-20</time>
+    <a href="/2018/05/20/css-rem/" class="article-date">
+  <time datetime="2018-05-20T08:03:00.000Z" itemprop="datePublished">2018-05-20</time>
 </a>
     
   <div class="article-category">
@@ -88,9 +88,8 @@
     
     <div class="article-content article-content-doorframe" itemprop="articleBody">
       
-        <h2 id="关于display-none与visibility-hidden的区别"><a href="#关于display-none与visibility-hidden的区别" class="headerlink" title="关于display:none与visibility:hidden的区别"></a>关于display:none与visibility:hidden的区别</h2><a id="more"></a>
-<h4 id="display-none和visibility-hidden的区别是："><a href="#display-none和visibility-hidden的区别是：" class="headerlink" title="display:none和visibility:hidden的区别是："></a>display:none和visibility:hidden的区别是：</h4><p>1.display:none是彻底消失，不在文档流中占位，浏览器也不会解析该元素；visibility:hidden是视觉上消失了，可以理解为透明度为0的效果，在文档流中占位，浏览器会解析该元素；</p>
-<p>2.使用visibility:hidden比display:none性能上要好，display:none切换显示时，页面产生回流（当页面中的一部分元素需要改变规模尺寸、布局、显示隐藏等，页面重新构建，此时就是回流。所有页面第一次加载时需要产生一次回流），而visibility切换是否显示时则不会引起回流。</p>
+        <h2 id="在项目中使用rem"><a href="#在项目中使用rem" class="headerlink" title="在项目中使用rem"></a>在项目中使用rem</h2><a id="more"></a>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> (<span class="keyword">function</span>(doc,win)&#123;</span><br><span class="line">    <span class="built_in">let</span> docEL = doc.documentElement</span><br><span class="line">    <span class="built_in">let</span> resize = <span class="string">'orientationChange'</span> <span class="keyword">in</span> window?<span class="string">'orientationChange'</span>:<span class="string">'resize'</span></span><br><span class="line">    <span class="built_in">let</span> resizeRem = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        docEL.style.fontSize = 20*docEL.clientWidth/640+<span class="string">'px'</span></span><br><span class="line">    &#125;</span><br><span class="line">    win.addEventListener(resize,resizeRem,<span class="literal">false</span>)</span><br><span class="line">&#125;)(document,window)</span><br></pre></td></tr></table></figure></div>
 
       
     </div>
@@ -105,11 +104,11 @@
 <nav id="article-nav">
   <div class="article-nav-block">
     
-      <a href="/2019/03/20/css-rem/" id="article-nav-newer" class="article-nav-link-wrap">
+      <a href="/2018/05/21/css-display-visibility/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption"></strong>
         <div class="article-nav-title">
           
-            css-rem
+            css-display/visibility
           
         </div>
       </a>
@@ -117,8 +116,8 @@
   </div>
   <div class="article-nav-block">
     
-      <a href="/2019/03/20/vue-swiper/" id="article-nav-older" class="article-nav-link-wrap">
-        <div class="article-nav-title">vue-swiper</div>
+      <a href="/2018/02/20/jwt/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">node中最简单的jwt demo</div>
         <strong class="article-nav-caption"></strong>
       </a>
     
@@ -167,7 +166,7 @@ gitment.render('gitmentContainer')
   <div class="widget-box">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/es6/">es6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/es6/">es6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/npm/">npm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li></ul>
     </div>
   </div>
 
@@ -182,7 +181,7 @@ gitment.render('gitmentContainer')
   <div class="widget-box">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2111/11/">November 2111</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2111/11/">November 2111</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li></ul>
     </div>
   </div>
 
@@ -198,19 +197,19 @@ gitment.render('gitmentContainer')
           </li>
         
           <li>
-            <a href="/2019/03/21/vue国际化/">vue国际化</a>
+            <a href="/2019/03/25/aboutNpm/">aboutNpm</a>
           </li>
         
           <li>
-            <a href="/2019/03/20/css-rem/">css-rem</a>
+            <a href="/2019/02/27/mianshi/">mianshi</a>
           </li>
         
           <li>
-            <a href="/2019/03/20/css-display-visibility/">css-display/visibility</a>
+            <a href="/2019/02/21/git/">git</a>
           </li>
         
           <li>
-            <a href="/2019/03/20/vue-swiper/">vue-swiper</a>
+            <a href="/2019/02/19/webpack/">webpack</a>
           </li>
         
       </ul>

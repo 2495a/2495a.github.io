@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>三种数组判断方法的区别和劣势 | Hu Junming</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="数组判断方法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="三种数组判断方法的区别和劣势">
+<meta property="og:url" content="http://yoursite.com/2018/12/15/三种数组判断方法的区别和劣势/index.html">
+<meta property="og:site_name" content="Hu Junming">
+<meta property="og:description" content="数组判断方法">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-25T12:09:26.113Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="三种数组判断方法的区别和劣势">
+<meta name="twitter:description" content="数组判断方法">
+  
+    <link rel="alternate" href="/atom.xml" title="Hu Junming" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/Cloud_Snow_Moon_128px_1179853_easyicon.net.ico">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+</head>
+</html>
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title>首页</a>
+      
+        <a class="nav-item" href="/archives" title>归档</a>
+      
+        <a class="nav-item" href="/categories" title>分类</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-三种数组判断方法的区别和劣势" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      三种数组判断方法的区别和劣势
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2018/12/15/三种数组判断方法的区别和劣势/" class="article-date">
+  <time datetime="2018-12-15T08:53:01.000Z" itemprop="datePublished">2018-12-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/js/">js</a>
+  </div>
+
+    
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-doorframe" itemprop="articleBody">
+      
+        <h2 id="数组判断方法"><a href="#数组判断方法" class="headerlink" title="数组判断方法"></a>数组判断方法</h2><a id="more"></a>
+<h2 id="一、-instanceof"><a href="#一、-instanceof" class="headerlink" title="一、 instanceof"></a>一、 instanceof</h2><h4 id="instanceof的内部机制是通过判断对象的原型链中是不是能找到类型的prototype"><a href="#instanceof的内部机制是通过判断对象的原型链中是不是能找到类型的prototype" class="headerlink" title="instanceof的内部机制是通过判断对象的原型链中是不是能找到类型的prototype"></a><code>instanceof</code>的内部机制是通过判断对象的原型链中是不是能找到类型的<code>prototype</code></h4><h4 id="instanceof会判断这个对象的原型链上是否会找到对应的Array的原型，找到返回true，否则返回false"><a href="#instanceof会判断这个对象的原型链上是否会找到对应的Array的原型，找到返回true，否则返回false" class="headerlink" title="instanceof会判断这个对象的原型链上是否会找到对应的Array的原型，找到返回true，否则返回false"></a><code>instanceof</code>会判断这个对象的原型链上是否会找到对应的Array的原型，找到返回true，否则返回false</h4><h4 id="但instanceof只能用来判断对象类型，原始类型不可以。并且所有对象类型instanceof-Object都是true"><a href="#但instanceof只能用来判断对象类型，原始类型不可以。并且所有对象类型instanceof-Object都是true" class="headerlink" title="但instanceof只能用来判断对象类型，原始类型不可以。并且所有对象类型instanceof Object都是true"></a>但<code>instanceof</code>只能用来判断对象类型，原始类型不可以。并且所有对象类型instanceof Object都是true</h4><hr>
+<h2 id="二、-Array-isArray"><a href="#二、-Array-isArray" class="headerlink" title="二、 Array.isArray()"></a>二、 Array.isArray()</h2><h4 id="①-功能：用来判断对象是否为数组"><a href="#①-功能：用来判断对象是否为数组" class="headerlink" title="① 功能：用来判断对象是否为数组"></a>① 功能：用来判断对象是否为数组</h4><h4 id="②-Array-isArray与instanceof：当检测Array实例时，Array-isArray优于instanceof，因为Array-isArray可以检测出iframs"><a href="#②-Array-isArray与instanceof：当检测Array实例时，Array-isArray优于instanceof，因为Array-isArray可以检测出iframs" class="headerlink" title="② Array.isArray与instanceof：当检测Array实例时，Array.isArray优于instanceof，因为Array.isArray可以检测出iframs"></a>② Array.isArray与instanceof：当检测Array实例时，Array.isArray优于instanceof，因为Array.isArray可以检测出iframs</h4><hr>
+<h2 id="三、-Object-prototype-toString-call"><a href="#三、-Object-prototype-toString-call" class="headerlink" title="三、 Object.prototype.toString.call()"></a>三、 Object.prototype.toString.call()</h2><h4 id="Object-prototype-toString-返回的是-“-object-object-”，通过call将Array的this上下文切换到Object，从而调用了"><a href="#Object-prototype-toString-返回的是-“-object-object-”，通过call将Array的this上下文切换到Object，从而调用了" class="headerlink" title="Object.prototype.toString()返回的是//“[object object]”，通过call将Array的this上下文切换到Object，从而调用了"></a>Object.prototype.toString()返回的是//“[object object]”，通过call将Array的this上下文切换到Object，从而调用了</h4><h4 id="Object-prototype-toString-，因此返回-object-type"><a href="#Object-prototype-toString-，因此返回-object-type" class="headerlink" title="Object.prototype.toString()，因此返回[object type]"></a>Object.prototype.toString()，因此返回[object type]</h4>
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+      <a href="/2019/01/18/prototype/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            prototype
+          
+        </div>
+      </a>
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2018/11/20/vue-swiper/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">vue-swiper</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
+<script src="https://jjeejj.github.io/js/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '10d6a03a093f11012fbc',
+    client_secret: '3904764d837d6ee9c88bb36265704d8ac182d4cb',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/psb.webp" title="图片来自网络">
+    <h3 class="avatar-name">
+      
+        Hu Junming
+      
+    </h3>
+    <p class="avatar-slogan">
+      人最大的劣根性，就是雙眼都用來盯著別人和外邊的世界，難以自檢。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/es6/">es6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/npm/">npm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2111/11/">November 2111</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2111/11/11/about/">Beginning</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/25/aboutNpm/">aboutNpm</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/27/mianshi/">mianshi</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/21/git/">git</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/19/webpack/">webpack</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2019 Hu Junming &nbsp;&nbsp;
+    by <a href="http://hexo.io/" target="_blank">myself</a>
+    <a href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">总浏览量:<span id="busuanzi_value_site_pv"></span></span>
+  </div>
+</footer>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/categories" class="mobile-nav-link">分类</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>
