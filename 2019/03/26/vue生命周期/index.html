@@ -5,22 +5,22 @@
   
 
   
-  <title>prototype | Hu Junming</title>
+  <title>vue生命周期 | Hu Junming</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
-  <meta name="description" content="构造函数、实例对象、原型对象">
+  <meta name="description" content="生命周期">
 <meta property="og:type" content="article">
-<meta property="og:title" content="prototype">
-<meta property="og:url" content="http://yoursite.com/2019/01/18/prototype/index.html">
+<meta property="og:title" content="vue生命周期">
+<meta property="og:url" content="http://yoursite.com/2019/03/26/vue生命周期/index.html">
 <meta property="og:site_name" content="Hu Junming">
-<meta property="og:description" content="构造函数、实例对象、原型对象">
+<meta property="og:description" content="生命周期">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-25T12:06:32.909Z">
+<meta property="og:updated_time" content="2019-03-26T07:57:39.118Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="prototype">
-<meta name="twitter:description" content="构造函数、实例对象、原型对象">
+<meta name="twitter:title" content="vue生命周期">
+<meta name="twitter:description" content="生命周期">
   
     <link rel="alternate" href="/atom.xml" title="Hu Junming" type="application/atom+xml">
   
@@ -55,25 +55,25 @@
   </div>
 </header>
       <div id="middlecontent" title class="global-width sidebar-right">
-        <section id="main"><article id="post-prototype" class="article global-container article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-vue生命周期" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
       
   
     <h1 class="article-title" itemprop="name">
-      prototype
+      vue生命周期
     </h1>
   
 
     </header>
   
   <div class="article-meta">
-    <a href="/2019/01/18/prototype/" class="article-date">
-  <time datetime="2019-01-18T07:06:19.000Z" itemprop="datePublished">2019-01-18</time>
+    <a href="/2019/03/26/vue生命周期/" class="article-date">
+  <time datetime="2019-03-26T07:51:32.000Z" itemprop="datePublished">2019-03-26</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/js/">js</a>
+    <a class="article-category-link" href="/categories/vue/">vue</a>
   </div>
 
     
@@ -88,8 +88,8 @@
     
     <div class="article-content article-content-doorframe" itemprop="articleBody">
       
-        <h2 id="构造函数、实例对象、原型对象"><a href="#构造函数、实例对象、原型对象" class="headerlink" title="构造函数、实例对象、原型对象"></a>构造函数、实例对象、原型对象</h2><a id="more"></a>
-<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">构造函数、实例对象、原型对象</span><br><span class="line">构造函数没有实例化之前就是普通函数 this指向window</span><br><span class="line">实例化过程中 new 把this指向先变的无指向(破坏this) 然后再复制一份同样的</span><br><span class="line">数据进行赋值给实例化之后的变量</span><br><span class="line">实例对象是通过构造函数实例来的</span><br><span class="line">只要是实例化之后 就一定有原型对象</span><br><span class="line">prototype: 通过当前的原型进行数据的传递 共享数据 实现继承 节省内存空间</span><br><span class="line"><span class="keyword">function</span> Parent(name,age,color)&#123;</span><br><span class="line">    this.name = name</span><br><span class="line">    this.age = age</span><br><span class="line">    this.color = colorm  </span><br><span class="line">&#125;</span><br><span class="line">var  p = new Parent(1,2,3)</span><br><span class="line">console.log(p.constructor === p.__proto__.constructor)</span><br><span class="line">console.log(p.__proto__ === Parent.prototype)</span><br><span class="line">console.log(p.__proto__.constructor === Parent)</span><br><span class="line">console.log(Parent.prototype.constructor === Parent)</span><br><span class="line">console.log(p.__proto__.constructor === Parent.prototype.constructor)</span><br><span class="line">console.log(p.__proto__.__proto__)</span><br><span class="line">console.log(Parent.prototype.__proto__ === Object.prototype)</span><br><span class="line">console.log(Object.prototype)</span><br><span class="line">console.log(p.__proto__.__proto__ === Object.prototype)</span><br></pre></td></tr></table></figure></div>
+        <h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><a id="more"></a>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">	&lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">	&lt;script src=<span class="string">'node_modules/vue/dist/vue.js'</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div id=<span class="string">'app'</span>&gt;&#123;&#123;msg&#125;&#125;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="built_in">let</span> vm = new Vue(&#123;</span><br><span class="line">// el:<span class="string">'#app'</span>,</span><br><span class="line">    data:&#123;</span><br><span class="line">        msg:1</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="title">beforeCreate</span></span>()&#123;</span><br><span class="line">        console.log(<span class="string">'组件实例刚刚被创建'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    //发布订阅 监测数据</span><br><span class="line">    <span class="function"><span class="title">created</span></span>()&#123;</span><br><span class="line">    //可以在这里初始化数据 ajax</span><br><span class="line">        console.log(<span class="string">'组件实例被创建之后'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    //在此时判断有没有el属性或者<span class="variable">$mount</span>挂载元素 如果没有 vue实例就此死亡</span><br><span class="line">    //在此时判断有没有template模板属性 如果有 替换挂载元素的内容 如果没有 挂载el的outhtml</span><br><span class="line">    <span class="function"><span class="title">beforeMount</span></span>()&#123;</span><br><span class="line">        console.log(<span class="string">'模板编译之前'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    //在此时创建DOM节点vm.<span class="variable">$el</span>并且替换el节点</span><br><span class="line">    <span class="function"><span class="title">mounted</span></span>()&#123;</span><br><span class="line">    //操作dom</span><br><span class="line">        console.log(<span class="string">'模板编译之后'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="title">beforeUpdate</span></span>()&#123;</span><br><span class="line">        console.log(<span class="string">'组件更新之前'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="title">updated</span></span>()&#123;</span><br><span class="line">        console.log(<span class="string">'组件更新之后'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="title">beforeDestroy</span></span>()&#123;</span><br><span class="line">        console.log(<span class="string">'组件销毁前调用'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    //销毁此组件所有的监听事件和定时函数</span><br><span class="line">    <span class="function"><span class="title">destroyed</span></span>()&#123;</span><br><span class="line">        console.log(<span class="string">'组件销毁后调用'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    template:<span class="string">"&lt;p&gt;嘿嘿嘿&lt;/p&gt;"</span>,</span><br><span class="line">&#125;)</span><br><span class="line">console.log(vm)</span><br><span class="line">// vm.<span class="variable">$mount</span>(<span class="string">'#app'</span>)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></div>
       
     </div>
     
@@ -103,11 +103,11 @@
 <nav id="article-nav">
   <div class="article-nav-block">
     
-      <a href="/2019/02/19/webpack/" id="article-nav-newer" class="article-nav-link-wrap">
+      <a href="/2111/11/11/about/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption"></strong>
         <div class="article-nav-title">
           
-            webpack
+            Beginning
           
         </div>
       </a>
@@ -115,8 +115,8 @@
   </div>
   <div class="article-nav-block">
     
-      <a href="/2018/12/15/三种数组判断方法的区别和劣势/" id="article-nav-older" class="article-nav-link-wrap">
-        <div class="article-nav-title">三种数组判断方法的区别和劣势</div>
+      <a href="/2019/03/25/aboutNpm/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">aboutNpm</div>
         <strong class="article-nav-caption"></strong>
       </a>
     

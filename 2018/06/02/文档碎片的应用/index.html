@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>文档碎片的应用 | Hu Junming</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="文档碎片对浏览器性能的提升">
+<meta property="og:type" content="article">
+<meta property="og:title" content="文档碎片的应用">
+<meta property="og:url" content="http://yoursite.com/2018/06/02/文档碎片的应用/index.html">
+<meta property="og:site_name" content="Hu Junming">
+<meta property="og:description" content="文档碎片对浏览器性能的提升">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-27T06:47:48.975Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="文档碎片的应用">
+<meta name="twitter:description" content="文档碎片对浏览器性能的提升">
+  
+    <link rel="alternate" href="/atom.xml" title="Hu Junming" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/Cloud_Snow_Moon_128px_1179853_easyicon.net.ico">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+</head>
+</html>
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title>首页</a>
+      
+        <a class="nav-item" href="/archives" title>归档</a>
+      
+        <a class="nav-item" href="/categories" title>分类</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-文档碎片的应用" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      文档碎片的应用
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2018/06/02/文档碎片的应用/" class="article-date">
+  <time datetime="2018-06-02T00:57:34.000Z" itemprop="datePublished">2018-06-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/js/">js</a>
+  </div>
+
+    
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-doorframe" itemprop="articleBody">
+      
+        <h2 id="文档碎片对浏览器性能的提升"><a href="#文档碎片对浏览器性能的提升" class="headerlink" title="文档碎片对浏览器性能的提升"></a>文档碎片对浏览器性能的提升</h2><a id="more"></a>
+<hr>
+<h4 id="每次对dom的操作都会触发”重排”（重新渲染界面，发生重绘或回流），这严重影响到能耗，一般通常采取的做法是尽可能的减少-dom操作来减少”重排”"><a href="#每次对dom的操作都会触发”重排”（重新渲染界面，发生重绘或回流），这严重影响到能耗，一般通常采取的做法是尽可能的减少-dom操作来减少”重排”" class="headerlink" title="每次对dom的操作都会触发”重排”（重新渲染界面，发生重绘或回流），这严重影响到能耗，一般通常采取的做法是尽可能的减少 dom操作来减少”重排”"></a>每次对dom的操作都会触发”重排”（重新渲染界面，发生重绘或回流），这严重影响到能耗，一般通常采取的做法是尽可能的减少 dom操作来减少”重排”</h4><hr>
+<h2 id="一、向body中插入100个元素"><a href="#一、向body中插入100个元素" class="headerlink" title="一、向body中插入100个元素"></a>一、向body中插入100个元素</h2><h3 id="这里我们用网上众所周知的插入100个元素的例子"><a href="#这里我们用网上众所周知的插入100个元素的例子" class="headerlink" title="这里我们用网上众所周知的插入100个元素的例子"></a>这里我们用网上众所周知的插入100个元素的例子</h3><h3 id="第一种方法"><a href="#第一种方法" class="headerlink" title="第一种方法"></a>第一种方法</h3><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(var i = 0;i &lt; 100;i++)&#123;</span><br><span class="line">    <span class="built_in">let</span> div = document.createElement(<span class="string">'div'</span>)</span><br><span class="line">    document.querySelector(<span class="string">'body'</span>).appendChild(div)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//这里<span class="keyword">for</span>循环了100次 进行了一百次的dom操作</span><br></pre></td></tr></table></figure></div>
+<hr>
+<h3 id="第二种写法"><a href="#第二种写法" class="headerlink" title="第二种写法"></a>第二种写法</h3><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> div = <span class="string">''</span></span><br><span class="line"><span class="keyword">for</span>(var i = 0;i &lt; 100;i++)&#123;</span><br><span class="line">    div += <span class="string">'&lt;div&gt;&lt;/div&gt;'</span></span><br><span class="line">&#125;</span><br><span class="line">document.querySelector(<span class="string">'body'</span>).innerHTML = div</span><br><span class="line"></span><br><span class="line">//这里的方法相比于第一种性能提升不止一点半点 不失为一种好办法</span><br></pre></td></tr></table></figure></div>
+<hr>
+<h3 id="第三种写法"><a href="#第三种写法" class="headerlink" title="第三种写法"></a>第三种写法</h3><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> Frag = document.createDocumentFragment()</span><br><span class="line"><span class="keyword">for</span>(var i =0;i&lt;100;i++)&#123;</span><br><span class="line">    <span class="built_in">let</span> div = document.createElement(<span class="string">'div'</span>)</span><br><span class="line">    Frag.appendChild(div)</span><br><span class="line">&#125;</span><br><span class="line">document.querySelector(<span class="string">'ul'</span>).appendChild(Frag)</span><br><span class="line"></span><br><span class="line">//这里的方法属于最优操作</span><br></pre></td></tr></table></figure></div>
+<hr>
+<h2 id="二、文档碎片"><a href="#二、文档碎片" class="headerlink" title="二、文档碎片"></a>二、文档碎片</h2><h4 id="把一个DocumentFragment-节点插入文档树时，插入的不是-DocumentFragment-自身，而是它的所有子孙节点"><a href="#把一个DocumentFragment-节点插入文档树时，插入的不是-DocumentFragment-自身，而是它的所有子孙节点" class="headerlink" title="把一个DocumentFragment 节点插入文档树时，插入的不是 DocumentFragment 自身，而是它的所有子孙节点"></a>把一个DocumentFragment 节点插入文档树时，插入的不是 DocumentFragment 自身，而是它的所有子孙节点</h4><h4 id="这使得DocumentFragment-成了有用的占位符，暂时存放那些一次插入文档的节点"><a href="#这使得DocumentFragment-成了有用的占位符，暂时存放那些一次插入文档的节点" class="headerlink" title="这使得DocumentFragment 成了有用的占位符，暂时存放那些一次插入文档的节点"></a>这使得DocumentFragment 成了有用的占位符，暂时存放那些一次插入文档的节点</h4><h4 id="当文档碎片插入完自动会被销毁碎片内容"><a href="#当文档碎片插入完自动会被销毁碎片内容" class="headerlink" title="当文档碎片插入完自动会被销毁碎片内容"></a>当文档碎片插入完自动会被销毁碎片内容</h4><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> Frag = document.createDocumentFragment()</span><br><span class="line"><span class="keyword">for</span>(var i =0;i&lt;100;i++)&#123;</span><br><span class="line">    <span class="built_in">let</span> div = document.createElement(<span class="string">'div'</span>)</span><br><span class="line">    Frag.appendChild(div)</span><br><span class="line">&#125;</span><br><span class="line">document.querySelector(<span class="string">'ul'</span>).appendChild(Frag)</span><br><span class="line">Frag.appendChild(document.querySelector(<span class="string">'ul'</span>))</span><br></pre></td></tr></table></figure></div>
+<h4 id="如果将文档中的节点添加到文档碎片中，就会从文档中移除该节点，也不会从浏览器再看到该节点，添加到文档碎片的新节点也不属于文档树"><a href="#如果将文档中的节点添加到文档碎片中，就会从文档中移除该节点，也不会从浏览器再看到该节点，添加到文档碎片的新节点也不属于文档树" class="headerlink" title="如果将文档中的节点添加到文档碎片中，就会从文档中移除该节点，也不会从浏览器再看到该节点，添加到文档碎片的新节点也不属于文档树"></a>如果将文档中的节点添加到文档碎片中，就会从文档中移除该节点，也不会从浏览器再看到该节点，添加到文档碎片的新节点也不属于文档树</h4>
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+      <a href="/2018/07/11/vue国际化/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            vue国际化
+          
+        </div>
+      </a>
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2018/05/21/css-display-visibility/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">css-display/visibility</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
+<script src="https://jjeejj.github.io/js/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '10d6a03a093f11012fbc',
+    client_secret: '3904764d837d6ee9c88bb36265704d8ac182d4cb',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/psb.webp" title="图片来自网络">
+    <h3 class="avatar-name">
+      
+        Hu Junming
+      
+    </h3>
+    <p class="avatar-slogan">
+      人最大的劣根性，就是雙眼都用來盯著別人和外邊的世界，難以自檢。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/es6/">es6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/npm/">npm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2111/11/">November 2111</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2111/11/11/about/">Beginning</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/26/vue生命周期/">vue生命周期</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/25/aboutNpm/">aboutNpm</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/27/mianshi/">mianshi</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/21/git/">git</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2019 Hu Junming &nbsp;&nbsp;
+    by <a href="http://hexo.io/" target="_blank">myself</a>
+    <a href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">总浏览量:<span id="busuanzi_value_site_pv"></span></span>
+  </div>
+</footer>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/categories" class="mobile-nav-link">分类</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>
